@@ -1,0 +1,117 @@
+# [Info]
+site_name: 我的网站 # 左上角标题
+site_url: https://chen-xinglong.github.io
+site_author: 陈兴隆
+site_description: 陈兴隆的个人网站
+# [Navigtion] 导航
+nav:
+  - 解压练习:
+    - underTheStress/stress.md
+  - 技术栏:
+    - techblog/index.md
+    - 我的博客: 1.md
+    - 我的实验设计: 1.md
+  - 语言文字:
+    - 说文解字:
+      - shuowen/index.md
+      - 部首一: 1.md
+      - 部首二: 1.md
+    - 论语: 1.md
+    - 楚辞:
+      - 离骚: 1.md
+    - 小说创作:
+      - 第N章 章节名: 1.md
+      - 第N章 章节名: 1.md
+    - 书籍栏:
+      - 书籍名: 
+        - 书籍介绍及书籍链接: 1.md
+        - 读后感想: 1.md
+  - 其他:
+    - Markdown基础语法: others/MarkdownLearn1.md
+    - Markdown扩展语法: others/MarkdownLearn2.md
+    - 每日生活:
+      - 图片 随感: 1.md
+    - 测试用: test/test.md
+# [UI]
+## [Top]
+theme:
+  custom_dir: overrides
+  name: material
+  palette: 
+    - scheme: default #日间模式
+      primary: indigo #文章栏目颜色
+      accent: pink  #链接等可交互原件的高亮色
+      toggle:
+        icon: material/weather-night
+        name: 切换至夜间模式
+    - scheme: slate #夜间模式
+      primary: indigo #文章栏目颜色
+      accent: pink  #链接等可交互原件的高亮色
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至日间模式
+  features:
+    - navigation.tabs # 使用Tab来进行分类
+    - navigation.top # 返回顶部的按钮 在上滑时出现
+    - navigation.indexes # Tab会有一个index.md 而不是在打开Tab时打开第一篇文章
+    - navigation.expand # 打开Tab时左侧目录全部展开
+    - search.suggest # 搜索输入一些字母时推荐补全整个单词
+    - search.highlight # 搜索出的文章关键词加入高亮
+  language: zh
+  #更改徽标 浏览器网页栏上的图案
+  favicon: images/Elysia.png
+  icon:
+      repo: fontawesome/brands/github
+  #edit_uri: edit/main/docs # 编辑按钮跳转的链接
+  #字体
+  font:
+    text: Roboto
+edit_uri: edit/main/docs # 编辑按钮跳转的链接
+## [top-right corner]
+repo_url: https://github.com/chen-xinglong/chen-xinglong.github.io # 右上角点击跳转的链接
+repo_name: chen-xinglong.github.io # 右上角的名字
+## [bottom-left corner]
+copyright: chen-xinglong CC-BY-4.0 # 左下角的版权声明
+
+## [bottom-right corner]
+extra:
+  social: # icons
+    - icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/363277510
+      name: Bilibili | 周石东 # 鼠标悬浮提示
+    - icon: fontawesome/brands/github
+      link: https://github.com/chen-xinglong
+      name: GitHub | chen-xinglong
+
+# [Extensions]
+plugins:
+  - search: # 现在还不支持中文搜索 支持之后可以设置语言
+    # insider已经支持中文的分词搜索了 https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/
+      lang:
+        - en
+        - ja
+  - tags # 给单篇文章添加标签 https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=tags
+markdown_extensions:
+  - pymdownx.arithmatex: # latex支持
+      generic: true
+  - attr_list # 给图片后面添加{width="300"}设置大小
+  - toc:
+      permalink: true # 固定标题位置为当前位置
+  - pymdownx.highlight: # 代码块高亮
+      # linenums: true # 显示行号
+      # auto_title: true # 显示编程语言名称
+  - pymdownx.superfences # 代码块高亮插件
+  - meta # 支持Markdown文件上方自定义标题标签等
+  - admonition # https://squidfunk.github.io/mkdocs-material/reference/admonitions/#inline-blocks
+  - pymdownx.details # admonition需要
+
+extra_javascript:
+  # latex支持
+  # check https://squidfunk.github.io/mkdocs-material/reference/mathjax/?h=math for more information
+  # notice `curl https://polyfill.io/v3/polyfill.min.js?features=es6 > docs/mkdocs/javascripts/polyfill.min.js && curl https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js > docs/mkdocs/javascripts/tex-mml-chtml.js` not works... because there are other resources that need to load
+  - mkdocs/javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js # https://cdn.bytedance.com/?query=mathjax&version=3.2.0
+extra_css:
+  - mkdocs/css/no-footer.css # 不使用底部的翻页
+  - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
