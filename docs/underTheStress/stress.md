@@ -4,12 +4,49 @@ comments: true
 
 # 压力之下，择要事为之
 
+## 总结
+
+### 工具一-着陆（专注）
+
+![tool1](../images/stress/tool1.png)  
+[音频1-喝饮料觉察](https://terrance.who.int/mediacentre/audio/MSD/Doing_What_Matters_Chinese/WHO-AUDIO_Stress_Management_Awareness_of_Drinking_CHINESE_22OCT2020.mp3)    
+[音频2-着陆练习1](http://terrance.who.int/mediacentre/audio/MSD/Doing_What_Matters_Chinese/WHO-AUDIO_Stress_Management_Grounding_Exercise_1__5_minutes_CHINESE_22OCT2020.mp3)  
+[音频3-着陆练习2](http://terrance.who.int/mediacentre/audio/MSD/Doing_What_Matters_Chinese/WHO-AUDIO_Stress_Management_Grounding_Exercise_2_3_minutes_CHINESE_22OCT2020.mp3)  
+[音频4-着陆练习3](http://terrance.who.int/mediacentre/audio/MSD/Doing_What_Matters_Chinese/WHO-AUDIO_Stress_Management_Grounding_Exercise_3_8_minutes_CHINESE_22OCT2020.mp3)  
+
+### 工具二-解套（注意+命名）
+![tool2](../images/stress/tool2.png)  
+[音频5-注意和命名](http://terrance.who.int/mediacentre/audio/MSD/Doing_What_Matters_Chinese/WHO-AUDIO_Stress_Management_Notice_and_Name_CHINESE_22OCT2020.mp3)  
+
+### 工具三-践行自己的价值观（行动）
+- 勇敢
+- 坚持不懈
+- 有原则
+- 宽容
+
+
+![tool3](../images/stress/tool3.png)  
+
+### 工具四-对自己友善
+![tool4](../images/stress/tool4.png)  
+[音频6-摆脱不友善想法](https://terrance.who.int/mediacentre/audio/MSD/Doing_What_Matters_Chinese/WHO-AUDIO_Stress_Management_Unhooking_from_Unkind_Thoughts_CHINESE_22OCT2020.mp3)  
+
+### 工具五-留有空间
+![tool5](../images/stress/tool5.png)  
+[音频7-留有空间](https://terrance.who.int/mediacentre/audio/MSD/Doing_What_Matters_Chinese/WHO-AUDIO_Stress_Management_Making_Room_CHINESE_22OCT2020.mp3)  
+
+[音频8-善待自己](https://terrance.who.int/mediacentre/audio/MSD/Doing_What_Matters_Chinese/WHO-AUDIO_Stress_Management_Being_kind_to_yourself_CHINESE_22OCT2020.mp3)
+
+
+
+
+
+
+
+
+
 ## 第一部分 着陆
-- 被自己的想法和感受“套住”  
-- 价值观是你对自己想要成为那种人的最深切的渴望  
-- 我们通过重新集中注意力和投入  
-- 正在做的事情中使自己“解套”  
-- 情绪风暴   
+   
 - “解套”和“着陆”技能练习的目的是帮助你“投入”生活。 
 - 练习本身并非为了使你摆脱愤怒、恐惧或悲伤的情绪。 
 
