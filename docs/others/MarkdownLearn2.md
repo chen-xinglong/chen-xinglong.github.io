@@ -33,6 +33,16 @@ comments: true
   "age": 25
 }
 ```
+```c++
+#include<iostream>
+using namespace std;
+int main()
+{
+  int a=123;
+  return 0;
+}
+```
+
 ## 标题编号
 
 ### My Great Heading {#heading-ids}
