@@ -10,8 +10,8 @@ comments: true
 > 网盘提取码统一为 1024  
 > 压缩文件解压码统一为 104825  （在压缩文件注释里也写明了）
 
-- [【服装制作基础教程】服装制图及裁剪技法+缝纫基础(b站)](https://www.bilibili.com/video/BV1jx411n7L9/?spm_id_from=333.999.0.0&vd_source=bf570b42226af32f99e67166edb383b5)  
-- [烹饪二十六工法-料理二十六工法---烹饪基础教学(b站)](https://www.bilibili.com/video/BV1UW411k734/?spm_id_from=333.999.0.0&vd_source=bf570b42226af32f99e67166edb383b5) 
+- [【视频·B站】【服装制作基础教程】服装制图及裁剪技法+缝纫基础(b站)](https://www.bilibili.com/video/BV1jx411n7L9/?spm_id_from=333.999.0.0&vd_source=bf570b42226af32f99e67166edb383b5)  
+- [【视频·B站】烹饪二十六工法-料理二十六工法---烹饪基础教学(b站)](https://www.bilibili.com/video/BV1UW411k734/?spm_id_from=333.999.0.0&vd_source=bf570b42226af32f99e67166edb383b5) 
 - [【书籍·网盘下载】中国居民膳食指南2022](https://pan.baidu.com/s/1X8CHn_bG8OVSPVLm3yyaDA?pwd=1024)
 - [【书籍·网盘下载】新赤脚医生手册](https://pan.baidu.com/s/1M7DknPW-PYotME93IKMP0Q?pwd=1024)
 - [【书籍·网盘下载】军地两用人才之友+续编](https://pan.baidu.com/s/1a1MzM0ez5_iRUqSs8AYGkw?pwd=1024)
