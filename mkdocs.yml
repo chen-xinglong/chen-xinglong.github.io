@@ -5,8 +5,8 @@ site_author: 陈兴隆
 site_description: 陈兴隆的个人网站
 # [Navigtion] 导航
 nav:
-  - 解压练习:
-    - underTheStress/stress.md
+  - 當今中國:
+    - tomorrow/tomorrow.md
   - 技术栏:
     - techblog/index.md
     - 我的博客: 1.md
