@@ -10,7 +10,7 @@ nav:
     - 软件安装: 
       - 1.IntelliJ IDEA 安装与破解: techblog/software/IntelliJIDEA.md
       - 2.Qt6开源版安装: techblog/software/Qt6_OpenSource.md
-    - 我的博客: 1.md
+    - 我的博客: ./index.md
     - 我的实验设计: 1.md
   - 语言文字:
     - 说文解字:
