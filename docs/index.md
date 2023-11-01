@@ -5,7 +5,8 @@ comments: true
 # 我的博客
 ## 好用的搜书网站：
 - [鸠摩搜书](https://www.jiumodiary.com/)
-
+## 免费好用的电影网站
+- [人人电影网](https://www.rrdynb.com/index.html)
 ## 生活技术学习：
 > 网盘提取码统一为 1024  
 > 压缩文件解压码统一为 104825  （在压缩文件注释里也写明了）
