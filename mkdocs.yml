@@ -48,16 +48,21 @@ theme:
     - navigation.expand # 打开Tab时左侧目录全部展开
     - search.suggest # 搜索输入一些字母时推荐补全整个单词
     - search.highlight # 搜索出的文章关键词加入高亮
+    - content.action.edit
   language: zh
   #更改徽标 浏览器网页栏上的图案
   favicon: images/Elysia.png
   icon:
       repo: fontawesome/brands/github
+      edit: material/pencil 
+      view: material/eye
   #edit_uri: edit/main/docs # 编辑按钮跳转的链接
   #字体
   font:
     text: Roboto
-edit_uri: edit/main/docs # 编辑按钮跳转的链接
+# [点击按钮跳转至 GitHub 修改 Markdown 源文件]
+# https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
+edit_uri: edit/main/docs/
 ## [top-right corner]
 repo_url: https://github.com/chen-xinglong/chen-xinglong.github.io # 右上角点击跳转的链接
 repo_name: chen-xinglong.github.io # 右上角的名字

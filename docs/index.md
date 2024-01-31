@@ -5,8 +5,12 @@ comments: true
 # 我的博客
 ## 崩坏三高清游戏原画壁纸
 - [米游社·崩坏三 圣芙蕾雅档案馆](https://bbs.mihoyo.com/bh3/wiki/channel/map/24/37?bbs_presentation_style=no_header)  
+## 程序员网站
+- [stackoverflow.com](https://stackoverflow.com/)
 ## 好用的搜书网站：
 - [鸠摩搜书](https://www.jiumodiary.com/)
+## DeepL翻译
+- [DeepL AI翻译](https://www.deepl.com/zh/translator/l/en/zh)
 ## 免费好用的电影网站
 - [人人电影网](https://www.rrdynb.com/index.html)
 ## 生活技术学习：
