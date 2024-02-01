@@ -13,10 +13,11 @@ nav:
       - 1.IntelliJ IDEA 安装与破解: techblog/software/IntelliJIDEA.md
       - 2.Qt6开源版安装: techblog/software/Qt6_OpenSource.md
   - 崩坏三:
-    - BH3page/elysia.md
     - 爱莉希雅: BH3page/elysia.md
     - 布洛妮娅: BH3page/bronya.md
-    - 观星: BH3page/teriri/guanxing.md
+    - 观星: BH3page/guanxing.md
+    - 月下: BH3page/yuexia.md
+    - 德莉莎: BH3page/teriri.md
     - 希儿: BH3page/seele.md
     - 丽塔: BH3page/lita.md
     - 其他: BH3page/others.md
