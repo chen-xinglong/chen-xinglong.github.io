@@ -10,4 +10,6 @@ ubuntu版本：ubuntu-22.04.4-desktop-amd64
 
 ![alt text](image-1.png)  
 获取root权限后，方可查询io接口地址。  
-参考：[https://blog.csdn.net/qq_44721831/article/details/108893248](https://blog.csdn.net/qq_44721831/article/details/108893248)
+参考：1.[https://blog.csdn.net/qq_44721831/article/details/108893248](https://blog.csdn.net/qq_44721831/article/details/108893248)  
+2.[Ubuntu获取root权限](https://blog.csdn.net/qq_44721831/article/details/108893248)
+
