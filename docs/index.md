@@ -9,6 +9,9 @@ comments: true
 - [stackoverflow.com](https://stackoverflow.com/)
 ## 好用的搜书网站：
 - [鸠摩搜书](https://www.jiumodiary.com/)
+## Galgame下载
+- [失落小站](https://www.shinnku.com/)  
+- [acgs.one](https://acgs.one/game/8.html#comments)  
 ## DeepL翻译
 - [DeepL AI翻译](https://www.deepl.com/zh/translator/l/en/zh)
 ## 免费好用的电影网站
