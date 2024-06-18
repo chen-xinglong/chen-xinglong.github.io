@@ -13,3 +13,9 @@ ubuntu版本：ubuntu-22.04.4-desktop-amd64
 参考：1.[https://blog.csdn.net/qq_44721831/article/details/108893248](https://blog.csdn.net/qq_44721831/article/details/108893248)  
 2.[Ubuntu获取root权限](https://blog.csdn.net/qq_44721831/article/details/108893248)
 
+# 第三章 内核编程语言和环境
+## 3.1 as86汇编器
+Linux 0.1x版本使用两种汇编器（Assembler）：
+- as86汇编器+ld86链接器 （Bruce Evans编写，用于Intel 8086、80386）
+- GNU汇编器gas(as)+GNU ld链接器
+来生成目标文件。

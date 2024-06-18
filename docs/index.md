@@ -7,11 +7,13 @@ comments: true
 - [米游社·崩坏三 圣芙蕾雅档案馆](https://bbs.mihoyo.com/bh3/wiki/channel/map/24/37?bbs_presentation_style=no_header)  
 ## 程序员网站
 - [stackoverflow.com](https://stackoverflow.com/)
+- [吾爱破解](https://www.52pojie.cn/)
 ## 好用的搜书网站：
 - [鸠摩搜书](https://www.jiumodiary.com/)
 ## Galgame下载
 - [失落小站](https://www.shinnku.com/)  
-- [acgs.one](https://acgs.one/game/8.html#comments)  
+- [acgs.one](https://acgs.one/game/8.html#comments) 
+- [ACG港湾-三次郎](https://www.acggw.club/) 
 ## DeepL翻译
 - [DeepL AI翻译](https://www.deepl.com/zh/translator/l/en/zh)
 ## 免费好用的电影网站
