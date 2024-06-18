@@ -9,6 +9,8 @@ nav:
     - index.md
   - 技术栏:
     - techblog/index.md
+    - 课程学习:
+      - Simulink学习: techblog/software/simulink.md
     - 软件安装: 
       - 1.IntelliJ IDEA 安装与破解: techblog/software/IntelliJIDEA.md
       - 2.Qt6开源版安装: techblog/software/Qt6_OpenSource.md
