@@ -15,7 +15,7 @@ nav:
       - 1.IntelliJ IDEA 安装与破解: techblog/software/IntelliJIDEA.md
       - 2.Qt6开源版安装: techblog/software/Qt6_OpenSource.md
       - 3.spacedesk有线连接安卓平板做副屏: techblog/software/spacedesk.md
-      - 4.matlab配置mex生成mexw64文件: 
+      - 4.matlab配置mex生成mexw64文件: techblog/software/mexw64.md
     - linux内核完全注释:
       - 1.问题集: linux-kurnul-0.11/Qs.md
   - 读书笔记:
