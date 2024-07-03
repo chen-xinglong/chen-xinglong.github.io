@@ -6,55 +6,56 @@ site_description: 陈兴隆的个人网站
 # [Navigtion] 导航
 nav:
   - 主页:
-    - index.md
+      - index.md
   - 技术栏:
-    - techblog/index.md
-    - 课程学习:
-      - Simulink学习: techblog/software/simulink.md
-    - 软件安装: 
-      - 1.IntelliJ IDEA 安装与破解: techblog/software/IntelliJIDEA.md
-      - 2.Qt6开源版安装: techblog/software/Qt6_OpenSource.md
-      - 3.spacedesk有线连接安卓平板做副屏: techblog/software/spacedesk.md
-      - 4.matlab配置mex生成mexw64文件: techblog/software/mexw64.md
-    - linux内核完全注释:
-      - 1.问题集: linux-kurnul-0.11/Qs.md
+      - techblog/index.md
+      - 课程学习:
+          - Simulink学习: techblog/software/simulink.md
+      - 软件安装:
+          - 1.IntelliJ IDEA 安装与破解: techblog/software/IntelliJIDEA.md
+          - 2.Qt6开源版安装: techblog/software/Qt6_OpenSource.md
+          - 3.spacedesk有线连接安卓平板做副屏: techblog/software/spacedesk.md
+          - 4.matlab配置mex生成mexw64文件: techblog/software/mexw64.md
+          - 5.vs2022调试matlab中s-function（c++）代码:
+      - linux内核完全注释:
+          - 1.问题集: linux-kurnul-0.11/Qs.md
   - 读书笔记:
-    - 马克思恩格斯选集: booknotes/SelectedWorksOfMarxAndEngels-Part1.md
+      - 马克思恩格斯选集: booknotes/SelectedWorksOfMarxAndEngels-Part1.md
   - 崩坏三:
-    - 爱莉希雅: BH3page/elysia.md
-    - 布洛妮娅: BH3page/bronya.md
-    - 观星: BH3page/guanxing.md
-    - 月下: BH3page/yuexia.md
-    - 德莉莎: BH3page/teriri.md
-    - 希儿: BH3page/seele.md
-    - 丽塔: BH3page/lita.md
-    - 其他: BH3page/others.md
+      - 爱莉希雅: BH3page/elysia.md
+      - 布洛妮娅: BH3page/bronya.md
+      - 观星: BH3page/guanxing.md
+      - 月下: BH3page/yuexia.md
+      - 德莉莎: BH3page/teriri.md
+      - 希儿: BH3page/seele.md
+      - 丽塔: BH3page/lita.md
+      - 其他: BH3page/others.md
   - 技术书籍（正在读）:
-    - techbooks/dianlujichu6th.md
+      - techbooks/dianlujichu6th.md
   - 语言文字:
-    - 说文解字:
-      - shuowen/index.md
+      - 说文解字:
+          - shuowen/index.md
   - 其他:
-    - Markdown基础语法: others/MarkdownLearn1.md
-    - Markdown扩展语法: others/MarkdownLearn2.md
-    - 动漫回忆录:
-      - anime/index.md
-    - 测试用: test/test.md
+      - Markdown基础语法: others/MarkdownLearn1.md
+      - Markdown扩展语法: others/MarkdownLearn2.md
+      - 动漫回忆录:
+          - anime/index.md
+      - 测试用: test/test.md
 # [UI]
 ## [Top]
 theme:
   custom_dir: overrides
   name: material
-  palette: 
+  palette:
     - scheme: default #日间模式
       primary: indigo #文章栏目颜色
-      accent: pink  #链接等可交互原件的高亮色
+      accent: pink #链接等可交互原件的高亮色
       toggle:
         icon: material/weather-night
         name: 切换至夜间模式
     - scheme: slate #夜间模式
       primary: indigo #文章栏目颜色
-      accent: pink  #链接等可交互原件的高亮色
+      accent: pink #链接等可交互原件的高亮色
       toggle:
         icon: material/weather-sunny
         name: 切换至日间模式
@@ -70,9 +71,9 @@ theme:
   #更改徽标 浏览器网页栏上的图案
   favicon: images/Elysia.png
   icon:
-      repo: fontawesome/brands/github
-      edit: material/pencil 
-      view: material/eye
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
   #edit_uri: edit/main/docs # 编辑按钮跳转的链接
   #字体
   font:
@@ -99,7 +100,7 @@ extra:
 # [Extensions]
 plugins:
   - search: # 现在还不支持中文搜索 支持之后可以设置语言
-    # insider已经支持中文的分词搜索了 https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/
+      # insider已经支持中文的分词搜索了 https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/
       lang:
         - en
         - ja
@@ -110,9 +111,9 @@ markdown_extensions:
   - attr_list # 给图片后面添加{width="300"}设置大小
   - toc:
       permalink: true # 固定标题位置为当前位置
-  - pymdownx.highlight: # 代码块高亮
-      # linenums: true # 显示行号
-      # auto_title: true # 显示编程语言名称
+  - pymdownx.highlight:# 代码块高亮
+    # linenums: true # 显示行号
+    # auto_title: true # 显示编程语言名称
   - pymdownx.superfences # 代码块高亮插件
   - meta # 支持Markdown文件上方自定义标题标签等
   - admonition # https://squidfunk.github.io/mkdocs-material/reference/admonitions/#inline-blocks
