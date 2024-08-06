@@ -111,7 +111,7 @@ markdown_extensions:
   - attr_list # 给图片后面添加{width="300"}设置大小
   - toc:
       permalink: true # 固定标题位置为当前位置
-  - pymdownx.highlight:# 代码块高亮
+  - pymdownx.highlight # 代码块高亮
     # linenums: true # 显示行号
     # auto_title: true # 显示编程语言名称
   - pymdownx.superfences # 代码块高亮插件
