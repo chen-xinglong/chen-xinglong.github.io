@@ -43,7 +43,8 @@ comments: true
 
 ![1.png](../images/mexw64/7.png)
 
- 在matlab 2018b 再次运行
+ 在matlab 2018b 再次运行 
+ - 命令： ' mex *.cpp '
 
 ![1.png](../images/mexw64/8.png)
 
