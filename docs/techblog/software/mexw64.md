@@ -17,9 +17,7 @@ comments: true
 
 ![1.png](../images/mexw64/1.png)
 
- 在(https://jmeubank.github.io/tdm-gcc/articles/2020-03/9.2.0-release)上下载TDM-GCC
-
-https://jmeubank.github.io/tdm-gcc/articles/2020-03/9.2.0-release (根据自己的实际情况下相应的版本)
+ - 在[https://jmeubank.github.io/tdm-gcc/articles/2020-03/9.2.0-release](https://jmeubank.github.io/tdm-gcc/articles/2020-03/9.2.0-release)上下载TDM-GCC(根据自己的实际情况下相应的版本)
 
 ## (1)下载完成后，有一个exe的文件
 
