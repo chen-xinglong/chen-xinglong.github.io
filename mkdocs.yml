@@ -7,6 +7,15 @@ site_description: 陈兴隆的个人网站
 nav:
   - 主页:
       - index.md
+  - linux内核学习: 
+      - linux011/index.md
+      - 第一章: linux011/p1.md
+      - 第二章: linux011/p2.md
+      - 第三章: linux011/p3.md
+      - 第四章: linux011/p4.md
+      - 第五章: linux011/p5.md
+      - 第六章: linux011/p6.md
+      - 第七章: linux011/p7.md
   - 技术栏:
       - techblog/index.md
       - 课程学习:
