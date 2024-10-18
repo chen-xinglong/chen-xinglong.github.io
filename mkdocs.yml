@@ -16,6 +16,9 @@ nav:
       - 第五章: linux011/p5.md
       - 第六章: linux011/p6.md
       - 第七章: linux011/p7.md
+  - TKSVG原理学习:
+      - TKSVG/refer1.md
+      - PART2: TKSVG/refer2.md
   - 技术栏:
       - techblog/index.md
       - 课程学习:
