@@ -31,28 +31,28 @@ nav:
           - 5.vs2022调试matlab中s-function（c++）代码: remake/techblog/software/vs2022sfunction.md
       - linux内核完全注释:
           - 1.问题集: remake/linux-kurnul-0.11/Qs.md
-  - 读书笔记:
-      - 马克思恩格斯选集: remake/booknotes/SelectedWorksOfMarxAndEngels-Part1.md
-  - 崩坏三:
-      - 爱莉希雅: remake/BH3page/elysia.md
-      - 布洛妮娅: remake/BH3page/bronya.md
-      - 观星: remake/BH3page/guanxing.md
-      - 月下: remake/BH3page/yuexia.md
-      - 德莉莎: remake/BH3page/teriri.md
-      - 希儿: remake/BH3page/seele.md
-      - 丽塔: remake/BH3page/lita.md
-      - 其他: remake/BH3page/others.md
-  - 技术书籍（正在读）:
-      - remake/techbooks/dianlujichu6th.md
-  - 语言文字:
-      - 说文解字:
-          - remake/shuowen/index.md
-  - 其他:
-      - Markdown基础语法: remake/others/MarkdownLearn1.md
-      - Markdown扩展语法: remake/others/MarkdownLearn2.md
-      - 动漫回忆录:
-          - remake/anime/index.md
-      - 测试用: remake/test/test.md
+      - 读书笔记:
+          - 马克思恩格斯选集: remake/booknotes/SelectedWorksOfMarxAndEngels-Part1.md
+      - 崩坏三:
+          - 爱莉希雅: remake/BH3page/elysia.md
+          - 布洛妮娅: remake/BH3page/bronya.md
+          - 观星: remake/BH3page/guanxing.md
+          - 月下: remake/BH3page/yuexia.md
+          - 德莉莎: remake/BH3page/teriri.md
+          - 希儿: remake/BH3page/seele.md
+          - 丽塔: remake/BH3page/lita.md
+          - 其他: remake/BH3page/others.md
+      - 技术书籍（正在读）:
+          - remake/techbooks/dianlujichu6th.md
+      - 语言文字:
+          - 说文解字:
+             - remake/shuowen/index.md
+      - 其他:
+          - Markdown基础语法: remake/others/MarkdownLearn1.md
+          - Markdown扩展语法: remake/others/MarkdownLearn2.md
+          - 动漫回忆录:
+             - remake/anime/index.md
+          - 测试用: remake/test/test.md
 # [UI]
 ## [Top]
 theme:
