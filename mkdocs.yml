@@ -28,7 +28,8 @@ nav:
           - 2.Qt6开源版安装: remake/techblog/software/Qt6_OpenSource.md
           - 3.spacedesk有线连接安卓平板做副屏: remake/techblog/software/spacedesk.md
           - 4.matlab配置mex生成mexw64文件: remake/techblog/software/mexw64.md
-          - 5.vs2022调试matlab中s-function（c++）代码: remake/techblog/software/vs2022sfunction.md
+          - 5.vs2022调试matlab中s-function（c++）代码: remake/techblog/software/vs2022sfunction.md  
+          - 6.如何在VMware虚拟机中手动安装VMware tools: remake/techblog/software/ubuntu-vmware-tools.md  
       - linux内核完全注释:
           - 1.问题集: remake/linux-kurnul-0.11/Qs.md
       - 读书笔记:
