@@ -3,6 +3,24 @@ comments: true
 ---
 
 # 我的博客
+
+## Linux-0.11内核学习
+
+**[第一章 概述](./linux011/p1.md)**
+
+**[第二章 微型计算机组成结构（硬件）](./linux011/p2.md)**
+
+**[第三章 内核编程语言及环境](./linux011/p3.md)**
+
+**[第四章](./linux011/p4.md)**
+
+**[第五章](./linux011/p5.md)**
+
+
+
+
+
+
 ## 崩坏三高清游戏原画壁纸
 - [米游社·崩坏三 圣芙蕾雅档案馆](https://bbs.mihoyo.com/bh3/wiki/channel/map/24/37?bbs_presentation_style=no_header)  
 ## 程序员网站
