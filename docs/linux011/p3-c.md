@@ -198,13 +198,24 @@ gcc汇编后的汇编代码：
 ![p3-7.png](../linux011image/p3-c/3-7.png)
 
 
+- 因此在通常的编译过程中我们无需特别指定 stub 模块 crtO.o，但是若想从上面给出的汇编程序手工使用 ld
+（gld）从 exch.o 模块链接产生可执行文件 exch，那么我们就需要在命令行上特别指明 crtO.o 这个模块，并
+且链接的顺序应该是“crtO.o、所有程序模块、库文件”。
+为了使用 ELF 格式的目标文件以及建立共享库模块文件，现在的 gcc 编译器（2.x）已经把这个 crtO
+扩展成几个模块：crtl.o、crti.o、crtbegin.o、crtend.o和 crtn.o。这些模块的链接顺序为“crtl.o、crti.o、crtbegin.0
+（crtbeginS.o）、所有程序模块、crtend.o（crtendS.o）、crtn.o、库模块文件”。gcc 的配置文件 specfile 指定了这种链接顺序。其中 ctrl.o、crti.o和 crtn.o 由C库提供，是C程序的“启动”模块；crtbegin.o和 crtend.o
+是 C++语言的启动模块，由编译器 gcc 提供；而 crtl.o则与 crto.o 的作用类似，主要用于在调用 main()之
+前做一些初始化工作，全局符号_start 就定义在这个模块中。
 
+- crtbegin.o 和 crtend.o主要用于C++语言在.ctors 和.dtors 区中执行全局构造器（constructor）和析构
+器（destructor）函数。crtbeginS.o和crtendS.o的作用与前两者类似，但用于创建共享模块中。crti.o用于
+在.init区中执行初始化函数init()。.init区中包含进程的初始化代码，即当程序开始执行时，系统会在调用 main()之前先执行.init 中的代码。crtn.o 则用于在.fini 区中执行进程终止退出处理函数 fini()函数，即当程序正常退出时（main()返回之后），系统会安排执行.fini 中的代码。
 
+- boot/head.s程序中第136--140行就是用于为跳转到init/main.c中的main()函数作准备工作。第139行
+上的指令在栈中压入了返回地址，而第 140 行则压入了 main())函数代码的地址。当head.s最后在第218行
+上执行 ret指令时就会弹出 main())的地址，并把控制权转移到 init/main.c 程序中。
 
-
-
-
-
+### 3.4.2 在汇编程序中调用C函数
 
 
 
