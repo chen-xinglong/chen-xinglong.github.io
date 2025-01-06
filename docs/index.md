@@ -27,7 +27,12 @@ comments: true
 
 
 
+## 动漫下载网站
+- [nyaa.si](https://nyaa.si/)
 
+## 搜索引擎
+
+- [duckduckgo（鸭鸭走）](https://duckduckgo.com/)
 
 ## 崩坏三高清游戏原画壁纸
 - [米游社·崩坏三 圣芙蕾雅档案馆](https://bbs.mihoyo.com/bh3/wiki/channel/map/24/37?bbs_presentation_style=no_header)  
