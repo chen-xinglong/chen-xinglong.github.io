@@ -30,6 +30,9 @@ comments: true
 ## 动漫下载网站
 - [nyaa.si](https://nyaa.si/)
 
+## 动漫在线观看网站 1080p
+- [www.mcydh.com](https://www.mcydh.com/vodplay/8505-1-1.html)
+
 ## 搜索引擎
 
 - [duckduckgo（鸭鸭走）](https://duckduckgo.com/)
