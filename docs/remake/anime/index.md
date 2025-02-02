@@ -20,7 +20,7 @@ comments: true
 
 ## [BanG Dream! It's MyGO!!!!!](./MyGO.md)
 ## BanG Dream! Ave Mujica
-## 葬送的芙宁娜
+## 葬送的芙莉莲
 ## 缘之空
 ## 向阳素描
 ## 凉宫春日系列
