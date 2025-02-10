@@ -18,6 +18,8 @@ comments: true
 
 **[第五章 Linux内核体系结构](./linux011/p5.md)**
 
+**[第五章 Linux/Makefile文件](./linux011/p5-12.md)**
+
 **[第六章 引导启动程序（boot）](./linux011/p6.md)**
 
 **[第七章 初始化程序（init）](./linux011/p7.md)**
@@ -62,6 +64,7 @@ https://arxiv.org/pdf/2402.18158
 - [人人电影网](https://www.rrdynb.com/index.html)
 
 ## 好书
+
 
 - 《存在主义心理治疗》-- 欧文·D·亚隆
 - 海德格尔哲学著作；庄子
