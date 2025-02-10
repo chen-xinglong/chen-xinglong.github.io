@@ -9,11 +9,13 @@ nav:
       - index.md
   - linux内核学习: 
       - linux011/index.md
-      - 第一章: linux011/p1.md
-      - 第二章: linux011/p2.md
-      - 第三章: linux011/p3.md
-      - 第四章: linux011/p4.md
-      - 第五章: linux011/p5.md
+      - 第一章 概述: linux011/p1.md
+      - 第二章 微型计算机组成结构（硬件）: linux011/p2.md
+      - 第三章 内核编程语言及环境 part 1 AS: linux011/p3-as.md
+      - 第三章 内核编程语言及环境 part 2 C: linux011/p3-c.md
+      - 第四章 80X86保护模式及其编程: linux011/p4.md
+      - 第五章 Linux内核体系结构: linux011/p5.md
+      - 第五章 Linux/Makefile文件: linux011/p5-12.md
       - 第六章: linux011/p6.md
       - 第七章: linux011/p7.md
   - TKSVG原理学习:
@@ -32,8 +34,8 @@ nav:
           - 6.如何在VMware虚拟机中手动安装VMware tools: remake/techblog/software/ubuntu-vmware-tools.md  
       - linux内核完全注释:
           - 1.问题集: remake/linux-kurnul-0.11/Qs.md
-      - 读书笔记:
-          - 马克思恩格斯选集: remake/booknotes/SelectedWorksOfMarxAndEngels-Part1.md
+      #- 读书笔记:
+      #   - 马克思恩格斯选集: remake/booknotes/SelectedWorksOfMarxAndEngels-Part1.md
       - 崩坏三:
           - 爱莉希雅: remake/BH3page/elysia.md
           - 布洛妮娅: remake/BH3page/bronya.md
@@ -43,17 +45,17 @@ nav:
           - 希儿: remake/BH3page/seele.md
           - 丽塔: remake/BH3page/lita.md
           - 其他: remake/BH3page/others.md
-      - 技术书籍（正在读）:
-          - remake/techbooks/dianlujichu6th.md
-      - 语言文字:
-          - 说文解字:
-             - remake/shuowen/index.md
+      #- 技术书籍（正在读）:
+      #    - remake/techbooks/dianlujichu6th.md
+      #- 语言文字:
+      #    - 说文解字:
+      #       - remake/shuowen/index.md
       - 其他:
           - Markdown基础语法: remake/others/MarkdownLearn1.md
           - Markdown扩展语法: remake/others/MarkdownLearn2.md
-          - 动漫回忆录:
-             - remake/anime/index.md
-          - 测试用: remake/test/test.md
+          #- 动漫回忆录:
+          #   - remake/anime/index.md
+          #- 测试用: remake/test/test.md
 # [UI]
 ## [Top]
 theme:
