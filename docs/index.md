@@ -29,7 +29,9 @@ comments: true
 **[第八章 内核代码（kernel）](./linux011/p8.md)**
 
 
+## 个人网站参考
 
+- [Shawn's Work Note](https://shawn-nie.github.io/)
 
 ## 动漫下载网站
 - [nyaa.si](https://nyaa.si/)
