@@ -9,6 +9,7 @@ nav:
       - index.md
   - linux内核学习:
       - linux011/index.md
+      - tips 小知识: linux011/tips.md
       - 第零章 8086汇编: linux011/8086asm.md
       - 第一章 概述: linux011/p1.md
       - 第二章 微型计算机组成结构（硬件）: linux011/p2.md

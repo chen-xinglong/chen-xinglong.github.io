@@ -6,6 +6,8 @@ comments: true
 
 ## Linux-0.11内核学习
 
+**[小知识](./linux011/tips.md)**
+
 **[第零章 8086汇编指令](./linux011/8086asm.md)**
 
 **[第一章 概述](./linux011/p1.md)**
