@@ -30,6 +30,9 @@ comments: true
 
 **[第八章 内核代码（kernel）](./linux011/p8.md)**
 
+## VS CODE 配置C/C++环境
+
+- [VS code 配置C/C++编程运行环境](https://blog.csdn.net/qq_42417071/article/details/137438374)
 
 ## 个人网站参考
 
