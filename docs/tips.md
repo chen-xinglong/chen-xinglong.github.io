@@ -22,3 +22,7 @@ To add C:\Users\10482\.local\bin to your PATH, either restart your shell or run:
 ## 为什么x86_64汇编后的汇编代码中，在main标签中会有call __main 这个指令？？deepseek说是为了处理静态的全局变量，函数之类的。
 
 ![汇编后的main函数](./images/tips_docs/2.png)
+
+## 虚拟机如何使用主机的VPN网络
+
+[虚拟机通过网络代理使用主机的VPN网络](https://blog.csdn.net/qq_27462573/article/details/130484723)
