@@ -30,3 +30,6 @@ To add C:\Users\10482\.local\bin to your PATH, either restart your shell or run:
 ## sourceforge 好的下载网站！！
 
 [sourceforge 一个很棒的下载网站！！](https://sourceforge.net/projects/bochs/)
+
+## FFT算法详解
+https://blog.csdn.net/Flag_z/article/details/99163939
