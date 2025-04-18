@@ -4,6 +4,12 @@ comments: true
 
 # 我的博客
 
+## 阮一峰
+
+阮一峰个人网站，上面的书籍跟博客很不错！！！
+
+[https://www.ruanyifeng.com/road/2010/index.html](https://www.ruanyifeng.com/road/2010/index.html)
+
 ## Linux-0.11内核学习
 
 **[小知识](./linux011/tips.md)**
