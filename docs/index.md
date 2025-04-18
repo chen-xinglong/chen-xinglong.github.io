@@ -10,6 +10,10 @@ comments: true
 
 [https://www.ruanyifeng.com/road/2010/index.html](https://www.ruanyifeng.com/road/2010/index.html)
 
+## 卡钦斯基：论工业社会及其未来
+
+[https://z.arlmy.me/Wiki/library/Original_Kaczynski_IndustrialSocietyAndItsFuture.html](https://z.arlmy.me/Wiki/library/Original_Kaczynski_IndustrialSocietyAndItsFuture.html)
+
 ## Linux-0.11内核学习
 
 **[小知识](./linux011/tips.md)**
