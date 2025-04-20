@@ -4,6 +4,16 @@ comments: true
 
 # 我的博客
 
+## FFT 算法
+
+[https://oi-wiki.org/math/poly/fft/](https://oi-wiki.org/math/poly/fft/)  
+
+[https://blog.csdn.net/Flag_z/article/details/99163939](https://blog.csdn.net/Flag_z/article/details/99163939)   
+
+[https://zhuanlan.zhihu.com/p/150815207](https://zhuanlan.zhihu.com/p/150815207)  
+
+[https://github.com/DUTFangXiang/FFT](https://github.com/DUTFangXiang/FFT)
+
 ## 阮一峰
 
 阮一峰个人网站，上面的书籍跟博客很不错！！！
