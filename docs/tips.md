@@ -33,3 +33,20 @@ To add C:\Users\10482\.local\bin to your PATH, either restart your shell or run:
 
 ## FFT算法详解
 https://blog.csdn.net/Flag_z/article/details/99163939
+
+## ubuntu 16.04 安装使用boches遇到问题参考网址记录
+
+[https://www.cnblogs.com/yongpan/p/9645684.html](https://www.cnblogs.com/yongpan/p/9645684.html)  
+
+[https://blog.csdn.net/ww_bin/article/details/46461675](https://blog.csdn.net/ww_bin/article/details/46461675)
+
+[https://blog.csdn.net/diaochuangsu1036/article/details/101883217?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ECtr-2-101883217-blog-123438536.235%5Ev43%5Epc_blog_bottom_relevance_base3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ECtr-2-101883217-blog-123438536.235%5Ev43%5Epc_blog_bottom_relevance_base3&utm_relevant_index=5](https://blog.csdn.net/diaochuangsu1036/article/details/101883217?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ECtr-2-101883217-blog-123438536.235%5Ev43%5Epc_blog_bottom_relevance_base3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ECtr-2-101883217-blog-123438536.235%5Ev43%5Epc_blog_bottom_relevance_base3&utm_relevant_index=5)
+
+[https://blog.csdn.net/qq_44227057/article/details/123438536](https://blog.csdn.net/qq_44227057/article/details/123438536)
+
+[https://blog.csdn.net/weixin_53064820/article/details/127575094](https://blog.csdn.net/weixin_53064820/article/details/127575094)
+
+[https://blog.csdn.net/weixin_53064820/article/details/127575094](https://blog.csdn.net/weixin_53064820/article/details/127575094)
+
+[https://www.x.org/wiki/Releases/Download/](https://www.x.org/wiki/Releases/Download/)
+
