@@ -4,6 +4,10 @@ comments: true
 
 # 我的博客
 
+## B计划
+[https://www.ruanyifeng.com/survivor/plan-b/plan-b.html](https://www.ruanyifeng.com/survivor/plan-b/plan-b.html)
+
+
 ## 巴尔扎克 小说《高老头》
 [https://www.ruanyifeng.com/road/2006/2006-02-27-balzac.html](https://www.ruanyifeng.com/road/2006/2006-02-27-balzac.html)
 
