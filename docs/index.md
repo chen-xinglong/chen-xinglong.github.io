@@ -4,6 +4,9 @@ comments: true
 
 # 我的博客
 
+## 巴尔扎克 小说《高老头》
+[https://www.ruanyifeng.com/road/2006/2006-02-27-balzac.html](https://www.ruanyifeng.com/road/2006/2006-02-27-balzac.html)
+
 ## FFT 算法
 
 [https://oi-wiki.org/math/poly/fft/](https://oi-wiki.org/math/poly/fft/)  
