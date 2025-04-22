@@ -4,6 +4,11 @@ comments: true
 
 # 我的博客
 
+<<<<<<< HEAD
+## 计算机系列丛书
+[计算机系列丛书 https://z-library.sk/booklist/165858/538e6d/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E5%88%97%E4%B8%9B%E4%B9%A6.html](https://z-library.sk/booklist/165858/538e6d/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E5%88%97%E4%B8%9B%E4%B9%A6.html)
+
+=======
 ## B计划
 [https://www.ruanyifeng.com/survivor/plan-b/plan-b.html](https://www.ruanyifeng.com/survivor/plan-b/plan-b.html)
 
@@ -11,6 +16,7 @@ comments: true
 ## 巴尔扎克 小说《高老头》
 [https://www.ruanyifeng.com/road/2006/2006-02-27-balzac.html](https://www.ruanyifeng.com/road/2006/2006-02-27-balzac.html)
 
+>>>>>>> 9ae67b195fe07fae1ec52fd2562a0708eb0f4b5e
 ## FFT 算法
 
 [https://oi-wiki.org/math/poly/fft/](https://oi-wiki.org/math/poly/fft/)  
