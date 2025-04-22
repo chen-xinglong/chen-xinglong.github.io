@@ -4,6 +4,8 @@ comments: true
 
 # 我的博客
 
+## [阅读书目](./readinglist.md)
+
 ## steam游戏免费下载！！！
 
 [https://steamrip.com/ai-limit-free-download/](https://steamrip.com/ai-limit-free-download/)
