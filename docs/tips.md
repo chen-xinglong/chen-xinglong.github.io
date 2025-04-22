@@ -31,6 +31,9 @@ To add C:\Users\10482\.local\bin to your PATH, either restart your shell or run:
 
 [sourceforge 一个很棒的下载网站！！](https://sourceforge.net/projects/bochs/)
 
+## 1. gcc -DRAMDISK
+在init/main.c 123行，有ifdef RAMDISK ，这个RAMDISK是被define在Makefile文件中，使用gcc命令-D在编译预处理时加入。（在Makefile文件中是被注释掉的）
+
 ## FFT算法详解
 https://blog.csdn.net/Flag_z/article/details/99163939
 
@@ -49,4 +52,5 @@ https://blog.csdn.net/Flag_z/article/details/99163939
 [https://blog.csdn.net/weixin_53064820/article/details/127575094](https://blog.csdn.net/weixin_53064820/article/details/127575094)
 
 [https://www.x.org/wiki/Releases/Download/](https://www.x.org/wiki/Releases/Download/)
+
 
