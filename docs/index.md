@@ -4,6 +4,8 @@ comments: true
 
 # 我的博客
 
+## 《异端的权利》 --茨威格
+
 ## Paul Graham 
 软件随想录
 
