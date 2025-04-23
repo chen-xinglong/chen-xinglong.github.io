@@ -4,7 +4,11 @@ comments: true
 
 # 我的博客
 
+## [“互联网工程任务组”（Internet Engineering Task Force） https://www.ietf.org/](https://www.ietf.org/)
+
 ## 《异端的权利》 --茨威格
+
+## 《黑客英雄》（Hackers: Heroes of the Computer Revolution）
 
 ## Paul Graham 
 软件随想录
