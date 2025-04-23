@@ -4,6 +4,13 @@ comments: true
 
 # 我的博客
 
+## Paul Graham 
+软件随想录
+
+黑客与画家
+
+## 乔伊斯的《都柏林人》、《一个青年艺术家的肖像》和塞林格的《九故事》、《木匠们，把房梁抬高些》
+
 ## 追踪恐龙的人 --童恩正  科幻小说
 
 [https://s.bailushuyuan.org/novel/traditional/chapters/136723](https://s.bailushuyuan.org/novel/traditional/chapters/136723)
