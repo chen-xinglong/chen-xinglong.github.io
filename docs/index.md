@@ -4,6 +4,10 @@ comments: true
 
 # 我的博客
 
+## 追踪恐龙的人 --童恩正  科幻小说
+
+[https://s.bailushuyuan.org/novel/traditional/chapters/136723](https://s.bailushuyuan.org/novel/traditional/chapters/136723)
+
 ## 卡尔维诺
 
 - 树上的男爵  
