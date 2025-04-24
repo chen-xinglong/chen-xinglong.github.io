@@ -44,3 +44,24 @@ $X_k=\sum_{n=0}^{N-1}x_ne^{-i \frac{2 \pi n}{N} k},k=0,1,...,N-1$
 
 ### 5. IFFT 逆快速傅里叶变换
 
+
+## others
+
+### $Ib=-Ia-Ic$
+
+对于三相对称正弦电流
+
+$$
+Ia=\sin(100 \pi t)
+Ic=\sin(100 \pi t - \frac{2\pi}{3})
+$$
+
+有
+
+$$
+Ib=-Ia-Ic
+=-\sin(100 \pi t)-\sin(100 \pi t - \frac{2\pi}{3})
+=\sin(100 \pi t + \frac{2\pi}{3})
+$$
+
+通过三角函数和差公式可得
