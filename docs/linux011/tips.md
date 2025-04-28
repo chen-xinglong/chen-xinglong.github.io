@@ -15,3 +15,7 @@
 [https://www.cnblogs.com/qifan573/p/15098677.html](https://www.cnblogs.com/qifan573/p/15098677.html)  
 
 [https://blog.csdn.net/newcong0123/article/details/51883352](https://blog.csdn.net/newcong0123/article/details/51883352)
+
+## 6. iret汇编指令
+
+[https://blog.csdn.net/Ghjhfssfgk/article/details/104392688](https://blog.csdn.net/Ghjhfssfgk/article/details/104392688)
