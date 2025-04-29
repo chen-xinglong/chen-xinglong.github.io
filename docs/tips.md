@@ -54,3 +54,8 @@ https://blog.csdn.net/Flag_z/article/details/99163939
 [https://www.x.org/wiki/Releases/Download/](https://www.x.org/wiki/Releases/Download/)
 
 
+## Windows 10 无法正常休眠，只是息屏，键盘输入或者点击鼠标会亮屏
+
+应该是静电导致的，长按电源键强制重启几次就好了
+
+[解决问题参考链接](https://gitcode.csdn.net/65eec88f1a836825ed79d5fb.html?dp_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTIyMzQ5NywiZXhwIjoxNzQ2NDk1NzQ5LCJpYXQiOjE3NDU4OTA5NDksInVzZXJuYW1lIjoic2h1eGl5YW4ifQ.WT9yghOKfqERreTp0Q__2Z-qfknJCz6c3yenW9GBF6g&spm=1001.2101.3001.6650.3&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7Ebaidujs_baidulandingword%7Eactivity-3-129182685-blog-122404796.235%5Ev43%5Epc_blog_bottom_relevance_base3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7Ebaidujs_baidulandingword%7Eactivity-3-129182685-blog-122404796.235%5Ev43%5Epc_blog_bottom_relevance_base3&utm_relevant_index=5)
