@@ -46,6 +46,9 @@ comments: true
 >
 >  *Everything* is going according to **plan**.
 
+### Permanent link1
+### 永久链接标题测试{#永久链接标题测试}
+
 ## 列表语法
 ### 有序列表
 1. 123
@@ -124,10 +127,17 @@ At the command prompt, type `nano`.
 <https://chen-xinglong.github.io/>
 
 <1048257273@qq.com>
+
+### Permanent link2
+### 永久链接标题测试2{#永久链接标题测试2}
+
+
 ### 带格式的链接
 I love supporting the **[EFF](https://eff.org)**.
 This is the *[Markdown Guide](https://www.markdownguide.org)*.
-See the section on [`code`](#code).
+See the section on [`code`](#code).  
+
+Test [`Permanent link`](#永久链接标题测试)  [`Permanent link2`](#永久链接标题测试2).
 ### 引用类型链接
 链接1[链接1][1]
 ### 用%20替代链接接中的空格
