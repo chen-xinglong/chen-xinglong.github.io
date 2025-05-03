@@ -4,6 +4,10 @@ comments: true
 
 # 我的博客
 
+## [英语字典（韦氏词典）](https://www.merriam-webster.com/)
+
+<https://www.merriam-webster.com/>
+
 ## 《美丽新世界》
 
 ## [“互联网工程任务组”（Internet Engineering Task Force） https://www.ietf.org/](https://www.ietf.org/)
