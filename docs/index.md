@@ -4,6 +4,10 @@ comments: true
 
 # 我的博客
 
+## Z-library
+
+[https://z-library.sk/](https://z-library.sk/) 每天可以免费下载十本书
+
 ## [英语字典（韦氏词典）](https://www.merriam-webster.com/)
 
 <https://www.merriam-webster.com/>
