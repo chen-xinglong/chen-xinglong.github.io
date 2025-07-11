@@ -12,6 +12,12 @@ comments: true
 
 <https://www.merriam-webster.com/>
 
+## 日语学习工具
+
+[标注日文假名工具](https://www.jcinfo.net/zh-hans/tools/kana)  
+
+[日文假名打字练习](https://www.jcinfo.net/zh-hans/japanese/kana-input/hiragana/all)
+
 ## 《美丽新世界》
 
 ## [“互联网工程任务组”（Internet Engineering Task Force） https://www.ietf.org/](https://www.ietf.org/)
