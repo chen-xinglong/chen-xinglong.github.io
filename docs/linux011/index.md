@@ -14,3 +14,5 @@
 [qemu启动linux0.11系统](https://github.com/hello-os/linux-0.11)
 
 [linux0.11操作系统](https://github.com/TonyWriting/Linux0.11)
+
+[i386手册](https://css.csail.mit.edu/6.858/2014/readings/i386.pdf)
