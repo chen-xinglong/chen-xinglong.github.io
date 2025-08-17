@@ -18,7 +18,7 @@ comments: true
 
 [日文假名打字练习](https://www.jcinfo.net/zh-hans/japanese/kana-input/hiragana/all)
 
-## 《美丽新世界》
+## [《美丽新世界》](./BraveNewWorld/BraveNewWorld.md)
 
 ## [“互联网工程任务组”（Internet Engineering Task Force） https://www.ietf.org/](https://www.ietf.org/)
 
