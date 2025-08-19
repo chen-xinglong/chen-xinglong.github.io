@@ -4,6 +4,10 @@ comments: true
 
 # 我的博客
 
+## [leetcode练习过的题目记录](https://leetcode.cn/studyplan/leetcode-75/)
+
+[LeetCode 75 "https://leetcode.cn/studyplan/leetcode-75/"](./Leetcode/leetcode1.md)
+
 ## Z-library
 
 [https://z-library.sk/](https://z-library.sk/) 每天可以免费下载十本书
@@ -134,7 +138,8 @@ https://arxiv.org/pdf/2402.18158
 - [musescore.com](https://musescore.com/user/79422529/scores/14696314)
 
 ## 崩坏三高清游戏原画壁纸
-- [米游社·崩坏三 圣芙蕾雅档案馆](https://bbs.mihoyo.com/bh3/wiki/channel/map/24/37?bbs_presentation_style=no_header)  
+- [米游社·崩坏三 圣芙蕾雅档案馆](https://bbs.mihoyo.com/bh3/wiki/channel/map/24/37?bbs_presentation_style=no_header)    
+- [布洛妮娅-壁纸](https://baike.mihoyo.com/bh3/wiki/content/1651/detail?bbs_presentation_style=no_header)
 ## 程序员网站
 - [stackoverflow.com](https://stackoverflow.com/)
 - [吾爱破解](https://www.52pojie.cn/)
