@@ -18,3 +18,5 @@
 [linux0.11操作系统](https://github.com/TonyWriting/Linux0.11)
 
 [i386手册](https://css.csail.mit.edu/6.858/2014/readings/i386.pdf)
+
+[Youtube - Making an OS (x86)](https://www.youtube.com/watch?v=APiHPkPmwwU&list=PLm3B56ql_akNcvH8vvJRYOc7TbYhRs19M&index=2)
