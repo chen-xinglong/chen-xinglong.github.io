@@ -1,0 +1,2563 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="陈兴隆的个人网站">
+      
+      
+        <meta name="author" content="陈兴隆">
+      
+      
+        <link rel="canonical" href="https://chen-xinglong.github.io/linux011/p2/">
+      
+      
+        <link rel="prev" href="../p1/">
+      
+      
+        <link rel="next" href="../p3-as/">
+      
+      
+      <link rel="icon" href="../../images/Elysia.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>第二章 微型计算机组成结构（硬件） - 我的网站</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../mkdocs/css/no-footer.css">
+    
+      <link rel="stylesheet" href="../../mkdocs/css/unordered-list-symbols.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="我的网站" class="md-header__button md-logo" aria-label="我的网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            我的网站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第二章 微型计算机组成结构（硬件）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="pink"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/chen-xinglong/chen-xinglong.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    chen-xinglong.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  主页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  linux内核学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../TKSVG/refer1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  TKSVG原理学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../remake/techblog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  技术栏
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="我的网站" class="md-nav__button md-logo" aria-label="我的网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    我的网站
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/chen-xinglong/chen-xinglong.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    chen-xinglong.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            主页
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    linux内核学习
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            linux内核学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    tips 小知识
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8086asm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第零章 8086汇编
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    第二章 微型计算机组成结构（硬件）
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 微型计算机组成结构（硬件）
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1微型计算机组成原理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1微型计算机组成原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU总线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制卡（适配器）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pc" class="md-nav__link">
+    <span class="md-ellipsis">
+      现代PC结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 I/O端口和寻址
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 I/O端口和寻址">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O端口地址（简称端口）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2 接口访问控制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-bioscmos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 主存储器、BIOS和CMOS存储器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 主存储器、BIOS和CMOS存储器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.1 主存储器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-bios" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.2 基本输入/输出程序 BIOS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-cmos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.3 CMOS存储器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 控制器和控制卡
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 控制器和控制卡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#242-dma" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2 DMA控制器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.3 定时/计数器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#244" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.4 键盘控制器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#245" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.5 串行控制卡
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4.5 串行控制卡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.异步串行通信原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.异步串行传输格式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.串行控制器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#246" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.6 显示控制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4.6 显示控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1mda" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.MDA显示标准
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2cga" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.CGA显示标准
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3egavga" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.EGA/VGA显示标准
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#247" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.7 软盘和硬盘控制器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p3-as/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 内核编程语言及环境 part 1 AS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p3-c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 内核编程语言及环境 part 2 C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 80X86保护模式及其编程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 Linux内核体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p5-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 Linux/Makefile文件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TKSVG原理学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            TKSVG原理学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TKSVG/refer1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    总结整理SVG控制程序所需要学习的知识点
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TKSVG/refer2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PART2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../remake/techblog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    技术栏
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            技术栏
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课程学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            课程学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/techblog/software/simulink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simulink学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    软件安装
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            软件安装
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/techblog/software/IntelliJIDEA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.IntelliJ IDEA 安装与破解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/techblog/software/Qt6_OpenSource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.Qt6开源版安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/techblog/software/spacedesk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.spacedesk有线连接安卓平板做副屏
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/techblog/software/mexw64/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.matlab配置mex生成mexw64文件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/techblog/software/vs2022sfunction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.vs2022调试matlab中s-function（c++）代码
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/techblog/software/ubuntu-vmware-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.如何在VMware虚拟机中手动安装VMware tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    linux内核完全注释
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            linux内核完全注释
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/linux-kurnul-0.11/Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.问题集
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    崩坏三
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            崩坏三
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/elysia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    爱莉希雅
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/bronya/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    布洛妮娅
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/guanxing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    观星
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/yuexia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    月下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/teriri/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    德莉莎
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/seele/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    希儿
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/lita/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    丽塔
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/others/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    其他
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            其他
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/others/MarkdownLearn1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown基础语法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/others/MarkdownLearn2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown扩展语法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1微型计算机组成原理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1微型计算机组成原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU总线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制卡（适配器）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pc" class="md-nav__link">
+    <span class="md-ellipsis">
+      现代PC结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 I/O端口和寻址
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 I/O端口和寻址">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O端口地址（简称端口）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2 接口访问控制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-bioscmos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 主存储器、BIOS和CMOS存储器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 主存储器、BIOS和CMOS存储器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.1 主存储器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-bios" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.2 基本输入/输出程序 BIOS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-cmos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.3 CMOS存储器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 控制器和控制卡
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 控制器和控制卡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#242-dma" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2 DMA控制器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.3 定时/计数器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#244" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.4 键盘控制器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#245" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.5 串行控制卡
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4.5 串行控制卡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.异步串行通信原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.异步串行传输格式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.串行控制器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#246" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.6 显示控制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4.6 显示控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1mda" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.MDA显示标准
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2cga" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.CGA显示标准
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3egavga" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.EGA/VGA显示标准
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#247" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.7 软盘和硬盘控制器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/chen-xinglong/chen-xinglong.github.io/edit/main/docs/linux011/p2.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="_1">第二章 微型计算机组成结构（硬件）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>硬件，基于Intel80X86中央处理器的IBM PC微型计算机及其兼容机的硬件系统</li>
+<li>软件，Linux操作系统内核  </li>
+</ul>
+<p>术语：
+- PC/AT 指具有80386或以上CPU的IBM PC及其兼容微机</p>
+<h2 id="21">2.1微型计算机组成原理<a class="headerlink" href="#21" title="Permanent link">&para;</a></h2>
+<h3 id="cpu">CPU总线<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h3>
+<p>CPU通过本地总线（或成为内部总线）与系统其他部分进行数据通信，总线由：
+- 地址线（用于提供内存或I/O设备的地址）
+- 数据线
+- 控制信号线
+三部分组成，对于80386CPU的PC机，其内部地址线和数据线都分别有32根。因此地址寻址空间范围有2^32字节，从0到4GB。 </p>
+<h3 id="_2">控制器<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>控制器举例：<br />
+- 中断控制器：Intel 8259A或其兼容芯片<br />
+- DMA控制器： Intel8237A芯片<br />
+- 定时计数器： Intel 8253/8254定时芯片<br />
+- 键盘控制器： Intel 8042芯片与键盘中的扫描电路进行通信。</p>
+<h3 id="_3">控制卡（适配器）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>控制卡（适配器）通过扩展插槽与主板上系统总线连接。<br />
+总线插槽是系统地址总线、数据总线和控制线的与扩展设备控制器的标准连接接口。  </p>
+<p>总线接口标准：
+- 工业结构标准ISA（Industry Standard Architecture）<br />
+- 扩展工业标准结构总线EISA（Extended ISA）<br />
+- 外围组件互连PCI（Peripheral Component Interconnect）总线<br />
+- 加速图形端口AGP（Accelerated Graphics Port）视频总线<br />
+- 高速PCIE（PCI Express）总线  </p>
+<p><strong>最初的80386机器上只有ISA总线，因此系统与外部I/O设备最多只能使用16位数据线进行数据传输</strong></p>
+<h3 id="pc">现代PC结构<a class="headerlink" href="#pc" title="Permanent link">&para;</a></h3>
+<p>主要使用两个超大规模芯片构成的芯片组或芯片集（chipsets）组成：
+- 北桥（Northbridge）芯片，用于与CPU、内存、AGP视频接口，这些接口有很高的传输速率。还有存储器控制作用，又被称为MCH（Memory Controller Hub）芯片 <br />
+- 南桥（Southbridge）芯片，用来管理低中速的组件，如PCI总线、IDE硬盘、USB端口等。南桥又被称为ICH（I/O Controller Hub）</p>
+<h2 id="22-io">2.2 I/O端口和寻址<a class="headerlink" href="#22-io" title="Permanent link">&para;</a></h2>
+<h3 id="io">I/O端口地址（简称端口）<a class="headerlink" href="#io" title="Permanent link">&para;</a></h3>
+<p>CPU为了访问I/O接口控制器或控制卡上的数据和状态信息，需要首先指定它们的地址。<strong>这种地址就称为I/O端口地址或者简称端口</strong></p>
+<p>端口地址设置方法：<br />
+- 统一编址（存储器映像编址）<br />
+- 独立编址  </p>
+<h3 id="222">2.2.2 接口访问控制<a class="headerlink" href="#222" title="Permanent link">&para;</a></h3>
+<p>PC机I/O接口数据传输控制方式：<br />
+- 程序循环查询方式<br />
+- <strong>中断处理方式</strong>（需要中断控制器，使用中断向量表）（<strong>主要方式</strong>）<br />
+- 直接存储器访问DMA（Direct Memory Access）传输方式（用于I/O设备与系统内存之间，无需CPU，需要专门的DMA控制器）  </p>
+<h2 id="23-bioscmos">2.3 主存储器、BIOS和CMOS存储器<a class="headerlink" href="#23-bioscmos" title="Permanent link">&para;</a></h2>
+<h3 id="231">2.3.1 主存储器<a class="headerlink" href="#231" title="Permanent link">&para;</a></h3>
+<ul>
+<li>1981年IBM PC机系统只带有640KB的RAM主存储器（简称内存）。由于所采用的8088/8086CPU只有20根地址线，因此内存寻址范围最高位1024KB（1MB）。  </li>
+<li>为了与原来的PC机在软件上兼容，系统1MB以下物理内存使用分配上仍然保持与原来PC机基本一致。  </li>
+<li>计算机上电初始化时，物理地址被设置为从地址0开始的连续区域。除了地址从0xA0000到0xFFFFF(640K到1M共384K)和0xFFFF0000到0xFFFFFFFF（4G处的最后一64K）范围外的所有内存都可以用作系统内存。这两个特定范围被用于I/O设备和BIOS程序。    </li>
+</ul>
+<h3 id="232-bios">2.3.2 基本输入/输出程序 BIOS<a class="headerlink" href="#232-bios" title="Permanent link">&para;</a></h3>
+<ul>
+<li>存放在ROM中的系统BIOS程序主要用于计算机开机时执行系统各部分的自检，建立操作系统需要使用的各种配置表。  </li>
+</ul>
+<hr />
+<p>当计算机系统上电开机或者按了机箱上的复位按钮时：  </p>
+<ul>
+<li>CPU会自动把代码段寄存器CS设置为0xF000，其段基地址设置为0xFFFF0000，段长度设置为64KB。  </li>
+<li>IP设置为0xFFF0  </li>
+<li>因此，此时CPU代码指针指向0xFFFFFFF0处，即4G空间最后一个64K的最后16字节处。由上节可知，这里正是ROM BIOS存放的位置。  </li>
+<li>并且BIOS会在此位置存放一条跳转指令JMP跳转到BIOS代码中64KB范围内的某一条指令开始执行。  </li>
+<li>BIOS在执行了一些列硬件检测和初始化操作之后，就会把与原来PC机兼容的64KB BIOS代码和数据复制到内存低端1M末端的64K处，然后跳转到这个地方并且让CPU进入真正的实地址模式工作。  </li>
+<li>最后BIOS就会硬盘或其他块设备把操作系统引导程序加载到内存0x7c00（31KB）处，并跳转到这个地方继续执行引导程序。</li>
+</ul>
+<h3 id="233-cmos">2.3.3 CMOS存储器<a class="headerlink" href="#233-cmos" title="Permanent link">&para;</a></h3>
+<p>CMOS（Complementary Metal Oxide Semiconductor，互补金属氧化物半导体）  </p>
+<p>CMOS用来存放计算机的实时时钟信息和系统硬件配置信息。需要I/O指令访问CMOS内存。  </p>
+<h2 id="24">2.4 控制器和控制卡<a class="headerlink" href="#24" title="Permanent link">&para;</a></h2>
+<ul>
+<li>使用两片级联的8259A可编程中断控制芯片，组成一个中断控制器。能为15个设备提供独立的中断控制功能。  </li>
+<li>开机时ROM BIOS会对8259A芯片初始化。同时在内存开始处0x000-0xFFF区域建立一个中断向量表。  </li>
+<li>Linux操作系统在内核初始化期间重新对8259A进行了设置。  </li>
+</ul>
+<h3 id="242-dma">2.4.2 DMA控制器<a class="headerlink" href="#242-dma" title="Permanent link">&para;</a></h3>
+<ul>
+<li>DMA控制器的主要功能是通过让外部设备直接与内存传输数据来增强系统的性能。  </li>
+<li>通常，它由机器上的Intel 8237芯片或其兼容芯片实现。  </li>
+<li>PC/AT机中，使用了两片8237芯片，DMA控制器有八个独立通道可使用。其中后四个是16位通道。  </li>
+<li>软盘控制器使用DMA通道2。   </li>
+<li>DMA寄存器是8位，地址和计数值是16位值，因此需要各自发送两次。</li>
+</ul>
+<h3 id="243">2.4.3 定时/计数器<a class="headerlink" href="#243" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Intel 8253/8254</strong> 是可编程定时/计数器(PIT-Programmable Interval Timer)芯片，用于处理计算机中的精准时间延迟。  </li>
+<li>该芯片提供3个独立16位计数器通道。  </li>
+<li>在软件中实现延时，使用8253/8254执行循环语句，延时到后向CPU发送中断信号。  </li>
+</ul>
+<hr />
+<ul>
+<li>PC/AT及其兼容微机采用8254芯片。  </li>
+<li>3个定时/计数器通道被分别用于日时钟计时中断信号、动态内存DRAM刷新定时电路和主机扬声器音调合成。  </li>
+<li>LinuxO.11操作系统只对通道0进行了重新设置，使得该计数器工作在<strong>方式3</strong>（<em>方式三是什么？</em>）下，并且每间隔10毫秒发出一个信号以产生中断请求信号（IRQ0）。这个间隔定时产生的中断请求就是Linux0.11内核工作的脉搏，它用于定时切换当前执行的任务和统计每个任务使用的系统资源量（时间）。  </li>
+</ul>
+<h3 id="244">2.4.4 键盘控制器<a class="headerlink" href="#244" title="Permanent link">&para;</a></h3>
+<p>我们使用的键盘是IBM公司于1984年PC/AT微机兼容键盘，通常称为AT-PS/2兼容键盘并具有101到104个按键。<br />
+- 键盘上有一个称为键盘编码器的处理器(Intel 8048或兼容芯片)专门用来扫描收集所有按键按下和松开的状态信息(即扫描码)，并发送到主机主板上键盘控制器中。 主机键盘控制器专门用来对接收到的键盘扫描码进行解码，并把解码后的数据发送到操作系统的键盘数据队列中。 <br />
+- 当一个键被按下时，键盘发送的扫描码称为接通扫描码(Make code)，或简称为接通码。<br />
+- 当一个被按下的键放开时发送的扫描码被称为断开扫描码(Break code)，或简称为断开码。<br />
+- 每个按键的接通码与断开码都是不同的。 <br />
+- <strong>整个键盘上所有按键的接通和断开码就组成了键盘的一个扫描码集(Scan Code Set)</strong>   </p>
+<hr />
+<p>扫描码集(目前有三套)：
+1. 一：原始XT键盘扫描码集(目前很少用)。<br />
+2. <strong>二：AT键盘扫描码集--现代键盘默认使用的扫描码集。</strong><br />
+3. 三：PS/2键盘扫描码集（IBM的PS/2微机使用，现在很少使用）。  </p>
+<ul>
+<li><strong>AT键盘默认发送第二套扫描码集，但为了与PC/XT机的软件兼容，仍会把所有接收到的第二套扫描码转换为第一套扫描码</strong>，这也是后续涉及键盘内容只给出XT键盘扫描码集的原因。  </li>
+</ul>
+<hr />
+<ul>
+<li>键盘控制器接收键盘发送来的11位串行格式数据。其中第1位是起始位，第2--9位是8位键盘扫描码，第10位是奇校验校验位，第11位是停止位。  </li>
+<li>键盘接收器将11位串行数据转换为PC/XT标准键盘兼容的系统扫描码，然后通过中断控制器IRQ1引脚向CPU发送中断请求。当CPU响应该中断请求后，就会调用键盘中断处理程序来读取控制器中的XT键盘扫描码。  </li>
+<li>XT键盘的断开码为其接通码加上0x80，即最高有效位(位7)置位时的接通码。  </li>
+<li>
+<p>AT键盘在PC/XT键盘上扩展了一些按键，这些按键其接通和断开扫描码通常有2到4个字节，并且第一个字节一定是0xE0（本书附录有完整的扫描码集）。 </p>
+</li>
+<li>
+<p>键盘控制器8042的输出端口P2用于其他目的。其P20引脚用于实现CPU复位操作，P21引脚用于控制A20信号线开启与否（1开启，0禁止）。  </p>
+</li>
+</ul>
+<h3 id="245">2.4.5 串行控制卡<a class="headerlink" href="#245" title="Permanent link">&para;</a></h3>
+<h4 id="1">1.异步串行通信原理<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>计算机/设备与计算机/设备之间的“语言”称为通信协议。  </li>
+<li>通信协议规定了传送一个有效数据长度单位的格式，这种格式我们称为“帧”。  </li>
+<li>除必要数据外，在传输的一帧信息中还包含起同步和错误检测作用的其他信息。  </li>
+</ul>
+<hr />
+<ul>
+<li>串行通信的异步（字符）与同步（多个字符或字节）。  </li>
+</ul>
+<h4 id="2">2.异步串行传输格式<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<p>帧格式：<br />
+- 起始位、数据位、奇偶校验位、停止位四部分构成。<br />
+- 起始位，起同步作用，值恒为0。<br />
+- 数据位，传输实际数据，长度为5-8比特。<br />
+- 奇偶校验位可有可无，由程序决定。<br />
+- 停止位恒为1，可由程序设定为1、1.5或2个比特位。  </p>
+<hr />
+<ul>
+<li>通信开始发送信息之前，双方必须设置成相同的格式，如具有相同数量的数据比特位和停止位。  </li>
+<li>无数据传输时，发送发一直处于传号（MARK）状态。若需要发送数据，则发送方需要先发送一个比特位间隔时间的空号起始位。</li>
+</ul>
+<hr />
+<p>在异步通信规范中，把传送1称为传号（MARK），传送0称为空号（SPACE）。</p>
+<h4 id="3">3.串行控制器<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>为实现串行通信，PC机上通常都带有两个符合RS-232C标准的串行接口，并使用通用异步接收/发送器控制芯片UART(Universal Asyncronous Receiver/Transmitter)组成的串行控制器来处理串行数据收发工作。  </li>
+<li>PC串行接口通常使用DB-25或DB-9连接器，主要用来连接MODEM（光猫；调制解调器）设备工作。    </li>
+<li>NS8250或NS16450 UART芯片，现在PC机则使用16650A及其兼容芯片。  </li>
+</ul>
+<h3 id="246">2.4.6 显示控制<a class="headerlink" href="#246" title="Permanent link">&para;</a></h3>
+<h4 id="1mda">1.MDA显示标准<a class="headerlink" href="#1mda" title="Permanent link">&para;</a></h4>
+<ul>
+<li>单色显示适配器MDA（Monochrome Display Adapter）仅支持黑白两色显示。并且只支持独有的文本字符显示方式（BIOS显示方式7）。  </li>
+<li>屏幕显示规格：80列*25行，共可显示2000个字符。每个字符还带有一个属性字节，因此显示一屏（一帧）内容需要占4KB字节。其中偶地址字节存放字符代码，奇地址字节存放显示属性。  </li>
+<li>MDA卡配置有8KB显示内存，在PC机内存寻址范围中占用从0xb0000开始的8KB空间(0xb0000 -- 0xb2000)。  </li>
+</ul>
+<h4 id="2cga">2.CGA显示标准<a class="headerlink" href="#2cga" title="Permanent link">&para;</a></h4>
+<p>彩色图形适配器CGA（Color Graphics Adapter）支持七种彩色和图形显示方式（BIOS显示方式0--6）。 
+- CGA有16KB显存（占用内存地址0xb8000-0xbc000）， 但在console.c程序中只用了其中8KB显存（0xb8000--0xba000）</p>
+<p>字符属性格式（8位）：
+D7 -- 闪烁
+D6-D4 --背景色RGB
+D3 -- 置1为高亮度
+D2-D0 -- 前景色</p>
+<p>D2-D0可以组合出8种颜色，前景色和高亮度比特位组合可以显示另外8种字符颜色。  </p>
+<h4 id="3egavga">3.EGA/VGA显示标准<a class="headerlink" href="#3egavga" title="Permanent link">&para;</a></h4>
+<ul>
+<li>在与MDA和CGA兼容的显示方式下，占用内存地址相同。EGA/VGA配有32KB以上的显存。在图形方式下占用从0xa0000开始的物理内存地址空间。  </li>
+</ul>
+<h3 id="247">2.4.7 软盘和硬盘控制器<a class="headerlink" href="#247" title="Permanent link">&para;</a></h3>
+<ul>
+<li>软盘控制系统：软盘片+软盘驱动器（软盘片可独立携带）    </li>
+<li>硬盘：硬盘+银盘驱动器（硬盘金属盘片固定在驱动器中，不可拆卸）  </li>
+<li>磁头通过切割运动磁介质磁感线产生感应电流读取数据。  </li>
+</ul>
+<hr />
+<p>盘片磁道格式（一条磁道（旋转一圈））：</p>
+<p><strong>GAP|扇区1|扇区2|扇区3|····|扇区n-1|扇区n|GAP</strong>    </p>
+<p>扇区格式（扇区3）：<br />
+<strong>同步|地址|校验|GAP|同步|512字节数据|校验|GAP</strong>  <br />
+扇区中的<strong>同步|地址|校验</strong>三部分为<strong>地址场</strong>，<strong>同步|512字节数据|校验</strong>为<strong>数据场</strong>。  </p>
+<ul>
+<li>盘片磁道格式中，GAP是间隔字段，用于起隔离作用。通常GAP是12个字节的0。  </li>
+<li>每个扇区的地址场的地址字段存放着相关扇区的柱面号、磁头号（面号）和扇区号。   </li>
+</ul>
+<hr />
+<ul>
+<li>为了读写磁盘（软盘和硬盘）上的数据，就必须使用磁盘控制器。磁盘控制器是CPU与驱动器之间的逻辑接口电路，它从CPU接收请求命令，向驱动器发送寻道、读/写和控制信号，并且控制和转换数据流形式。控制器与驱动器之间传输的数据包括扇区地址信息以及定时和时钟信息。    </li>
+<li>PC/AT机中软盘驱动控制器FDC(Floppy Fisk Controller)采用NEC u PD765或其兼容芯片。</li>
+</ul>
+<p>折叠测试 ：</p>
+<details>
+  <summary>什么是iuap design</summary>
+  iuap design 是用友网络FED团队开发的企业级应用前端集成解决方案。
+</details>
+
+<p>2024.10.16-11.16   于云南昆明、兰州、泰安家中</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      chen-xinglong CC-BY-4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://space.bilibili.com/363277510" target="_blank" rel="noopener" title="Bilibili | 周石东" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92c-26.4-.8-48.2-9.8-65.3-27.2S.7 396.5 0 368.2V169.8c.8-26 9.7-47.6 26.7-65.7C43.8 87.8 65.5 78.8 92 78h29.4L96 52.2c-5.7-5.7-8.6-13-8.6-21.8S90.3 14.3 96 8.6 109 0 117.9 0s16.1 2.9 21.9 8.6L213.1 78h88l74.5-69.4C381.7 2.9 389.2 0 398 0s16.1 2.9 21.9 8.6c5.7 5.7 8.6 13 8.6 21.8s-2.9 16.1-8.6 21.8L394.6 78h29.3c26.4.8 48 9.8 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96c-9.6.4-17.4 3.7-23.6 9.8-6.1 6.1-9.4 13.9-9.8 23.5v194.4c0 9.2 3.3 17 9.8 23.5s14.4 9.8 23.6 9.8h320.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/chen-xinglong" target="_blank" rel="noopener" title="GitHub | chen-xinglong" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.action.edit"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2862 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="陈兴隆的个人网站">
+      
+      
+        <meta name="author" content="陈兴隆">
+      
+      
+        <link rel="canonical" href="https://chen-xinglong.github.io/linux011/p3-c/">
+      
+      
+        <link rel="prev" href="../p3-as/">
+      
+      
+        <link rel="next" href="../p4/">
+      
+      
+      <link rel="icon" href="../../images/Elysia.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>第三章 内核编程语言及环境 part 2 C - 我的网站</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../mkdocs/css/no-footer.css">
+    
+      <link rel="stylesheet" href="../../mkdocs/css/unordered-list-symbols.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#33-c" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="我的网站" class="md-header__button md-logo" aria-label="我的网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            我的网站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第三章 内核编程语言及环境 part 2 C
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="pink"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/chen-xinglong/chen-xinglong.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    chen-xinglong.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  主页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  linux内核学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../TKSVG/refer1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  TKSVG原理学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../remake/techblog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  技术栏
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="我的网站" class="md-nav__button md-logo" aria-label="我的网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    我的网站
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/chen-xinglong/chen-xinglong.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    chen-xinglong.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            主页
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    linux内核学习
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            linux内核学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    tips 小知识
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8086asm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第零章 8086汇编
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第一章 概述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第二章 微型计算机组成结构（硬件）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p3-as/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 内核编程语言及环境 part 1 AS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    第三章 内核编程语言及环境 part 2 C
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    第三章 内核编程语言及环境 part 2 C
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#33-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 C语言程序
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 C语言程序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.1 C程序编译和链接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.2 嵌入汇编
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-get_seg_bytesegaddr" class="md-nav__link">
+    <span class="md-ellipsis">
+      define get_seg_byte(seg,addr) \
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="define get_seg_byte(seg,addr) \">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#333" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.3 圆括号中的组合语句
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-inbport" class="md-nav__link">
+    <span class="md-ellipsis">
+      define inb(port)({\
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="define inb(port)({\">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#334" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.4 寄存器变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#335" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.5 内联函数（没看懂）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 C与汇编程序的相互调用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 C与汇编程序的相互调用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.1 C函数调用机制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.1 C函数调用机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3411" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.1.1 栈帧结构和控制转移权方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3412" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.1.2 函数调用举例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3413-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.1.3 main()也是一个函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.2 在汇编程序中调用C函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.3 在C程序中调用汇编函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-linux-011-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Linux 0.11 目标文件格式 （3.5这一大节看不太懂！！）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Linux 0.11 目标文件格式 （3.5这一大节看不太懂！！）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.1 目标文件格式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5.1 目标文件格式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3511" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.1.1 执行头部分
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3512" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.1.2 重定位信息部分
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3513" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.1.3 符号表和字符串部分
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352-linux-011" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.2 Linux 0.11 中的目标文件格式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#353" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.3 链接程序输出
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#354" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.4 链接程序预定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#355-syetemmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.5 Syetem.map文件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-make-makefile" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Make 程序和Makefile文件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第四章 80X86保护模式及其编程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 Linux内核体系结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p5-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第五章 Linux/Makefile文件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第六章
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第七章
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TKSVG原理学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            TKSVG原理学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TKSVG/refer1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    总结整理SVG控制程序所需要学习的知识点
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TKSVG/refer2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PART2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../remake/techblog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    技术栏
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            技术栏
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课程学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            课程学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/techblog/software/simulink/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simulink学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    软件安装
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            软件安装
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/techblog/software/IntelliJIDEA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.IntelliJ IDEA 安装与破解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/techblog/software/Qt6_OpenSource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.Qt6开源版安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/techblog/software/spacedesk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.spacedesk有线连接安卓平板做副屏
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/techblog/software/mexw64/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.matlab配置mex生成mexw64文件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/techblog/software/vs2022sfunction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.vs2022调试matlab中s-function（c++）代码
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/techblog/software/ubuntu-vmware-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.如何在VMware虚拟机中手动安装VMware tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    linux内核完全注释
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            linux内核完全注释
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/linux-kurnul-0.11/Qs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.问题集
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    崩坏三
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            崩坏三
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/elysia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    爱莉希雅
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/bronya/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    布洛妮娅
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/guanxing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    观星
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/yuexia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    月下
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/teriri/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    德莉莎
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/seele/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    希儿
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/lita/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    丽塔
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/BH3page/others/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    其他
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    其他
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            其他
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/others/MarkdownLearn1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown基础语法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../remake/others/MarkdownLearn2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown扩展语法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#33-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 C语言程序
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 C语言程序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.1 C程序编译和链接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.2 嵌入汇编
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-get_seg_bytesegaddr" class="md-nav__link">
+    <span class="md-ellipsis">
+      define get_seg_byte(seg,addr) \
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="define get_seg_byte(seg,addr) \">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#333" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.3 圆括号中的组合语句
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-inbport" class="md-nav__link">
+    <span class="md-ellipsis">
+      define inb(port)({\
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="define inb(port)({\">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#334" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.4 寄存器变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#335" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.5 内联函数（没看懂）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 C与汇编程序的相互调用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 C与汇编程序的相互调用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.1 C函数调用机制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4.1 C函数调用机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3411" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.1.1 栈帧结构和控制转移权方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3412" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.1.2 函数调用举例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3413-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.1.3 main()也是一个函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.2 在汇编程序中调用C函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.3 在C程序中调用汇编函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-linux-011-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Linux 0.11 目标文件格式 （3.5这一大节看不太懂！！）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Linux 0.11 目标文件格式 （3.5这一大节看不太懂！！）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.1 目标文件格式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5.1 目标文件格式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3511" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.1.1 执行头部分
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3512" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.1.2 重定位信息部分
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3513" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.1.3 符号表和字符串部分
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352-linux-011" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.2 Linux 0.11 中的目标文件格式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#353" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.3 链接程序输出
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#354" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.4 链接程序预定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#355-syetemmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.5 Syetem.map文件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-make-makefile" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Make 程序和Makefile文件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/chen-xinglong/chen-xinglong.github.io/edit/main/docs/linux011/p3-c.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h2 id="33-c">3.3 C语言程序<a class="headerlink" href="#33-c" title="Permanent link">&para;</a></h2>
+<p>GNU gcc 对 ISO 标准 C89 描述的 C语言进行了一些扩展。</p>
+<h3 id="331-c">3.3.1 C程序编译和链接<a class="headerlink" href="#331-c" title="Permanent link">&para;</a></h3>
+<p>使用gcc汇编器编译C语言程序时通常会经过四个处理阶段，即<strong>预处理阶段、编译阶段、汇编阶段和链接阶段</strong>，如下图所示。</p>
+<p><img alt="p3-1" src="../../linux011image/p3-c/p3-1.png" /></p>
+<ul>
+<li>
+<p>在前处理阶段中，gcc 会把C程序传递给 C 前处理器CPP，对 C语言程序中<strong>指示符和宏</strong>进行替换处理，
+输出纯C语言代码；</p>
+</li>
+<li>
+<p>在编译阶段，gcc把C语言程序编译生成对应的与机器相关的as汇编语言代码；</p>
+</li>
+<li>
+<p>在汇编阶段，as汇编器会把汇编代码转换成机器指令，并以特定二进制格式输出保存在标文件中；最后GNU ld链接器把程序的相关目标文件组合链接在一起，生成程序的可执行映像文件。调用gcc的命令行格式与编译汇编语言的格式类似：</p>
+</li>
+</ul>
+<p><code>gcc [选项] [-o outfile] infile ...</code></p>
+<p>其中 infile 是输入的 C 语言文件；outfile 是编译产生的输出文件。对于某次编译过程，并非一定要全部执行这四个阶段，使用命令行选项可以令gcc 编译过程在某个处理阶段后就停止执行。例如，使用<code>-S</code> 选项可以让 gcc 在输出了 程序对应的汇编语言程序之后就停止运行；使用<code>-c</code>选项可以让 gcc 只生成目标文件而不执行链接处理，见如下所示。</p>
+<ul>
+<li>
+<p><code>gcc -o hello hello.c</code> //编译 hello.c 程序，生成执行文件 hello。</p>
+</li>
+<li>
+<p><code>gcc -S -o hello.s hello.c</code> /／编译 hello.c 程序，生成对应汇编程序 hello.s。 </p>
+</li>
+<li>
+<p><code>gcc -c -o hello.o hello.c</code>　/／编译hello.c 程序，生成对应目标文件hello.o而不链接。</p>
+</li>
+</ul>
+<hr />
+<p>在编译象Linux 内核这样的包含很多源程序文件的大型程序时，通常使用 make 工具软件对整个程序的编译过程进行自动管理，详见后面说明。</p>
+<h3 id="332">3.3.2 嵌入汇编<a class="headerlink" href="#332" title="Permanent link">&para;</a></h3>
+<p>本节介绍内核C语言程序中接触到的嵌入式汇编（内联汇编）语句。由于我们通常编制C程序过程中一般很少用到嵌入式汇编代码，因此这里有必以要对其基本格式和使用方法进行说明。具有输入和输出参数的嵌入汇编语句的基本格式为：  </p>
+<blockquote>
+<p>asm（“汇编语句”<br />
+：输出寄存器<br />
+：输入寄存器<br />
+：会被修改的寄存器）；  </p>
+</blockquote>
+<ul>
+<li>除第1行以外，后面带冒号的行若不使用就都可以省略。其中，”asm”是内联汇编语句关键词；”汇编语句”是你写汇编指令的地方；“输出寄存器”表示当这段嵌入汇编执行完之后，哪些寄存器用于存放输出数据。此地，这些寄存器会分别对应一C语言表达式值或一个内存地址；“输入寄存器”表示在开始执行汇编代码时，这里指定的一些寄存器中应存放的输入值，它们也分别对应着一C变量或常数值。“会被修改的寄存器”表示你已对其中列出的寄存器中的值进行了改动，gcc编译器不能再依赖于它原先对这些寄存器加载的值。如果必要的话，gcc 需要重新加载这些寄存器。因此我们需要把那些没有在输出/输入寄存器部分列出，但是在汇编语句中明确使用到或隐含使用到的寄存器名列在这个部分中。</li>
+</ul>
+<p>下面我们用例子来说明嵌入汇编语句的使用方法。这里列出了kernel/traps.c 文件中第 22 行开始的　段代码作为例子来详细解说。为了能看得更清楚一些，我们对这段代码进行了重新排列和编号。</p>
+<blockquote>
+<h1 id="define-get_seg_bytesegaddr">define get_seg_byte(seg,addr) \<a class="headerlink" href="#define-get_seg_bytesegaddr" title="Permanent link">&para;</a></h1>
+<p>({ \  <br />
+register char <strong>res;  \<br />
+__asm</strong> ("push %%fs; \<br />
+  mov %%ax, %%fs; \<br />
+   movb %%fs :%2, %%al ; \<br />
+  pop %%fs" \<br />
+  :"=a" (__res) \<br />
+  :"0"(seg),"m" (*(addr)));\  <br />
+__res;})</p>
+</blockquote>
+<ul>
+<li>
+<p>这段10行代码定义了一个嵌入汇编语言宏函数。通常使用汇编语句最方便的方式是把它们放在一个宏内。用圆括号括住的组合语句（花括号中的语句）：“({})”可以作为表达式使用，其中最后一行上的变量 __res（第10行）是该表达式的输出值，见下一节说明。</p>
+</li>
+<li>
+<p>因为宏语句需要定义在一行上，因此这里使用反斜杠将这些语句连成一行。这条宏定义将被替换到程序中引用该宏名称的地方。第 1 行定义了宏的名称，也即是宏函数名称 get_seg_byte(seg,addr)。第 3 行定义了一个寄存器变量res。该变量将被保存在一个寄存器中，以便于快速访问和操作。如果想指定寄存器（例如 eax），那么我们可以把该句写成<code>register char __res asm ("ax");</code>，其中"asm"也可以写成"<strong>asm</strong>"。第 4 行上的"asm"表示嵌入汇编语句的开始。从第 4 行到第 7 行的 4 条语句是 AT＆T格式　的汇编语句。另外，<strong>为了让gcc编译产生的汇编语言程序中寄存器名称前有一个百分号"%”，在嵌入汇编语句寄存器名称前就必须写上两个百分号“%%”</strong>。</p>
+</li>
+<li>
+<p>第8行即是输出寄存器，这句的含义是在这段代码运行结束后将 eax 所代表的寄存器的值放入，__res　变量中，作为本函数的输出值，"=a"中的"a"称为加载代码，"="表示这是输出寄存器，并且其中的值将被输出值替代。第9行表示在这段代码开始运行时将 seg放到eax 寄存器中，<strong>"0"表示使用与上面同个位置的输出相同的寄存器。</strong>而<code>(*(addr))</code>表示一个内存偏移地址值。</p>
+</li>
+<li>
+<p><strong>为了在上面汇编语句中使用该地址值，嵌入汇编程序规定把输出和输入寄存器统一按顺序编号，顺序是从输出寄存器序列从左到右从上到下以"%0"升始，分别记为%0、%1、...%9。因此，输出寄存器的编号是%0（这里只有一个输出寄存器），输入寄存器前一部分("0"(seg))的编号是%1，而后部分的编号是%2。上面第6行上的%2即代表<code>(*(addr))</code>这个内存偏移量。</strong></p>
+</li>
+<li>
+<p>现在我们来研究4--7行上的代码的作用。第一句将fs 段寄存器的内容入栈；第二句将eax中的段值赋给 fs 段寄存器；第三句是把 <code>fs:(*(addr))</code>所指定的字节放入al 寄存器中。当执行完汇编语句后，输出寄存器eax 的值将被放入__res，作为该宏函数（块结构表达式）的返回值。</p>
+</li>
+<li>
+<p>通过上面分析，我们知道，宏名称中的 seg 代表一指定的内存段值，而 addr表示一内存偏移地址量。到现在为止，我们应该很清楚这段程序的功能了吧！该宏函数的功能是从指定段和偏移值的内存地址处取一个字节。</p>
+</li>
+</ul>
+<hr />
+<p>表3-4 常用寄存器加载代码说明（<strong>重要！！</strong>）（见原文50页表格）</p>
+<hr />
+<p>...</p>
+<h3 id="333">3.3.3 圆括号中的组合语句<a class="headerlink" href="#333" title="Permanent link">&para;</a></h3>
+<p>花括号对”{…}”用于把变量声明和语句组合成一个复合语句（组合语句）或一个语句块，这样<strong>在语义上这些语句就等同于一条语句</strong>。组合语句的右花括号后面不需要使用分号。圆括号中的组合语句，即形　如"({...})"的语句，可以在 GNU C 中用作一个表达式使用。这样就可以在表达式中使用 loop、switch语句和局部变量，因此这种形式的语句通常称为语句表达式。语句表达式具有如下示例的形式：</p>
+<blockquote>
+<p>({int y = foo(); int z; <br />
+if (y &gt; 0) z = y;<br />
+else z = -y; <br />
+3 + z；})</p>
+</blockquote>
+<p>其中组合语句中最后一条语句必须是后面跟随一个分号的表达式。这个表达式（”3十z”）的值即用作整个圆括号括住语句的值。如果最后一条语句不是表达式，那么整个语句表达式就具有void类型，因此没有值。另外，这种表达式中语句声明的任何局部变量都会在整块语句结束后失效。这个示例语句可以象如下形式的赋值语句来使用：</p>
+<blockquote>
+<p>res = x + ({略...}) + b;</p>
+</blockquote>
+<p>当然，人们通常不会象上面这样写语句，这种语句表达式通常者都用来定义宏。例如内核源代码init/main.c 程序中读取CMOS时钟信息的宏定义：</p>
+<blockquote>
+<p>69 #define CMOS_READ(addr)({\  //最后反斜杠起连接两行语句的作用。<br />
+70 outb_p(0x80|addr,0x70); \  //首先向I/0端口0x70输出欲读取的位置addr。<br />
+71 inb_p(0x71);\  //然后从端口0x71读入该位置处的值作为返回值。<br />
+72 })</p>
+</blockquote>
+<hr />
+<p>示例二</p>
+<blockquote>
+<h1 id="define-inbport">define inb(port)({\<a class="headerlink" href="#define-inbport" title="Permanent link">&para;</a></h1>
+<p>unsigned char _v;\<br />
+<strong>asm</strong> volatile ("inb %%dx,%%al":"=a" (_v):"d"(port));\ <br />
+_v;\<br />
+ })</p>
+</blockquote>
+<hr />
+<h3 id="334">3.3.4 寄存器变量<a class="headerlink" href="#334" title="Permanent link">&para;</a></h3>
+<p>如果想在嵌入汇编语句中把汇编指令的输出首接写到指定的寄存器中，那么此时使用局部寄存器变量，就很方便。由于linux内核中通常只使用局部奇存器变量，因此这里我只对局部奇存器变量的使用方法进行讨论。在GNU C程序中我们可以在函数中用如下形式定义一个局部寄存器变量：</p>
+<p><code>register int res _asm("ax");</code></p>
+<p>这单ax是变量 res所希望使用的寄存器。定义这样一个寄存器变量并不会专保留这个寄存器不派其他用途。在程序编译过程中，当gcc 数据流控制确定变量的值已经个用时就可能将该寄存器派作其他用途，而且对它的引用可能会被删除、移动或被简化。另外，gcc并个保证所编译出的代码会把变量一直放在指定的寄存器中。因此在嵌入汇编的指令部分最好不要明确地引用该寄存器并且假设该寄存器肯定引用的是该变量值。然而把该变量用作为asm的操作数还是能够保证指定的寄存器被用作该操作数。</p>
+<h3 id="335">3.3.5 内联函数（<strong>没看懂</strong>）<a class="headerlink" href="#335" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>在程序中，通过把一个函数声明为内联（inline）函数，就可以让gcc 把函数的代码集成到调用该函数的代码中去。这样处理可以去掉函数调用时进入/退出时间开销，从而肯定能够加快执行速度。</p>
+</li>
+<li>
+<p>内联函数嵌入调用者代码中的操作是一种优化操作，因此只有进行优化编译时才会执行代码嵌入处理。若编译过程中没有使用优化选项"-0"，那么内联函数的代码就不会被真止地嵌入到调用者代码中，而是只作为普通函数调用来处理。把一个函数声明为内联函数的方法是在函数声明中使用关键词”inine”。</p>
+</li>
+<li>
+<p><strong>详细说明见原书P53</strong></p>
+</li>
+</ul>
+<h2 id="34-c">3.4 C与汇编程序的相互调用<a class="headerlink" href="#34-c" title="Permanent link">&para;</a></h2>
+<h3 id="341-c">3.4.1 C函数调用机制<a class="headerlink" href="#341-c" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>在Linux内核程序boot/head.s执行完基本初始化操作之后，就会跳转去执行 init/main.c 程序。那么head.s 程序是如何把执行控制转交给init/main.c 程序的呢？汇编程序是如何调用执行C语言程序的？这里我们首先描述一下C函数的调用机制、控制权传递方式，然后说明head.s 程序跳转到C程序的方法。</p>
+</li>
+<li>
+<p>函数调用操作包括从一块代码到另一块代码之间的双向数据传递和执行控制转移。数据传递通过函数参数和返回值来进行。另外，我们还需要在进入函数时为函数的局部变量分配存诸空间，并且在退出函数时收这部分空间。Intel80x86 CPU为控制传递提供了简单的指令，而数据的传递和局部变量存诸空间的分配与回收则通过栈操作来实现。</p>
+</li>
+</ul>
+<h4 id="3411">3.4.1.1 栈帧结构和控制转移权方式<a class="headerlink" href="#3411" title="Permanent link">&para;</a></h4>
+<p>大多数CPU上的程序实现使用栈来支持函数调用操作。栈被用来传递函数参数、存储返回信息、临时保存寄存器原有值以备恢复以及用来存储局部数据。单个函数调用操作所使用的栈部分被称为<strong>栈帧（Stack frame）</strong>结构。栈帧结构的两端由两个指针来指定。<strong>寄存器 ebp 通常用作帧指针（frame pointer）</strong>，而<strong>esp则用作栈指针（stack pointer）</strong>。在函数执行过程中，栈指针esp 会随着数据的入栈和出栈而移动，因此函数中对大部分数据的访问都基于帧指针ebp进行。如下图所示：</p>
+<p><img alt="p3-2.png" src="../../linux011image/p3-c/p3-2.png" /></p>
+<ul>
+<li>
+<p>对于函数A调用函数B的情况，传递给B的参数包含在A的栈帧中。当A调用B时，函数A的返回地址（<strong>调用返回后继续执行的指令地址</strong>）被压入栈中，栈中该位置也明确指明了A栈帧的结束处。而B的栈帧则从随后的栈部分开始，即图中保存帧指针（ebp）的地方开始。再随后则用于存放任何保存的寄存器值以及函数的临时值。</p>
+</li>
+<li>
+<p>B 函数同样也使用栈来保存不能放在寄存器中的局部变量值。例如由于通常CPU的寄存器数量有限而不能够存放函数的所有局部数据，或者有些局部变量是数组或结构，因此必须使用数组或结构引用来访问。</p>
+</li>
+<li>
+<p>还有就是C语言的地址操作符&amp;被应用到一个局部变量上时，我们就需要为该变量生成一个地址，即为变
+量的地址指针分配一空间。最后，B函数会使用栈来保存调用任何其它函数的参数。
+<strong>栈是往低（小）地址方向扩展的，而 esp 指向当前栈顶处的元素</strong>。通过使用 push 和 pop 指令我们可以把数据压入栈中或从栈中弹出。对于没有指定初始值的数据所需要的存储空间，我们可以通过把栈指针递减适当的值来做到。类似地，通过增加栈指针值我们可以回收栈中已分配的空间。</p>
+</li>
+<li>
+<p>指令CALL和RET用于处理函数调用和返回操作。调用指令CALL的作用是把返回地址压入栈中并且跳转到被调用函数开始处执行。返回地址是程序中紧随调用指令CALL后面一条指令的地址。因此当被调函数返回时就会从该位置继续执行。返回指令RET用于弹出栈顶处的地址并跳转到该地址处。在使用该指令之前，应该先正确处理栈中内容，使得当前栈指针所指位置内容正是先前CALL指令保存的返回地址。</p>
+</li>
+<li>
+<p>另外，<strong>若返回值是一个整数或一个指针，那么寄存器eax将被默认用来传递返回值</strong>。</p>
+</li>
+<li>
+<p>尽管某一时刻只有一个函数在执行，但我们还是需要确定在一个函数（调用者）调用其他函数（被调
+用者）时，被调用者不会修改或覆盖掉调用者今后要用到的寄存器内容。因此Intel CPU采用了所有函数
+必须遵守的寄存器用法统一惯例。<strong>该惯例指明，寄存器eax、edx和ecx的内容必须由调用者自己负责保存</strong>。当函数B被A调用时，函数B可以在不用保存这些寄存器内容的情况下任意使用它们而不会毁坏函数A所需要的任何数据。<strong>另外，寄存器 ebx、esi和 edi 的内容则必须由<em>被调用者B</em> 来保护</strong>。当被调用者需要使
+用这些寄存器中的任意一个时，必须首先在栈中保存其内容，并在退出时恢复这些寄存器的内容。因为调
+用者A（或者一些更高层的函数）并不负责保存这些寄存器内容，但可能在以后的操作中还需要用到原先的值。还有寄存器 ebp 和 esp 也必须遵守第二个惯例用法（由被调用者B来维护）。</p>
+</li>
+</ul>
+<h4 id="3412">3.4.1.2 函数调用举例<a class="headerlink" href="#3412" title="Permanent link">&para;</a></h4>
+<p><img alt="p3-3.png" src="../../linux011image/p3-c/p3-3.png" /></p>
+<p>gcc汇编后的汇编代码：
+<img alt="p3-4.png" src="../../linux011image/p3-c/3-4.png" /></p>
+<p><img alt="p3-5.png" src="../../linux011image/p3-c/3-5.png" /></p>
+<p><strong><em>其余请参考原书</em></strong></p>
+<h4 id="3413-main">3.4.1.3 main()也是一个函数<a class="headerlink" href="#3413-main" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>上面这段汇编程序是使用 gcc 1.40 编译产生的，可以看出其中有几行多余的代码。可见当时的 gcc 编译器还不能产生最高效率的代码，这也是为什么某些关键代码需要直接使用汇编语言编制的原因之一。另外，上面提到C程序的主程序 main()也是一个函数。这是因为在编译链接时它将会作为 <strong>crtO.s</strong> 汇编程序的函数被调用。crtO.s 是一个桩（stub）程序，名称中的“crt”是“C run-time”的缩写。该程序的目标文件将被链接在每个用户执行程序的开始部分，主要用于设置一些初始化全局变量等。</p>
+</li>
+<li>
+<p>Linux 0.11中crtO.s汇编
+程序见如下所示。其中建立并初始化全局变量_environ供程序中其它模块使用。</p>
+</li>
+</ul>
+<p><img alt="p3-6.png" src="../../linux011image/p3-c/3-6.png" /></p>
+<ul>
+<li>通常使用gcc 编译链接生成执行文件时，gcc 会自动把该文件的代码作为第一个模块链接在可执行程序中。在编译时使用显示详细信息选项-v就可以明显地看出这个链接操作过程：</li>
+</ul>
+<p><img alt="p3-7.png" src="../../linux011image/p3-c/3-7.png" /></p>
+<ul>
+<li>
+<p>因此在通常的编译过程中我们无需特别指定 stub 模块 crtO.o，但是若想从上面给出的汇编程序手工使用 ld
+（gld）从 exch.o 模块链接产生可执行文件 exch，那么我们就需要在命令行上特别指明 crtO.o 这个模块，并
+且链接的顺序应该是“crtO.o、所有程序模块、库文件”。
+为了使用 ELF 格式的目标文件以及建立共享库模块文件，现在的 gcc 编译器（2.x）已经把这个 crtO
+扩展成几个模块：crtl.o、crti.o、crtbegin.o、crtend.o和 crtn.o。这些模块的链接顺序为“crtl.o、crti.o、crtbegin.0
+（crtbeginS.o）、所有程序模块、crtend.o（crtendS.o）、crtn.o、库模块文件”。gcc 的配置文件 specfile 指定了这种链接顺序。其中 ctrl.o、crti.o和 crtn.o 由C库提供，是C程序的“启动”模块；crtbegin.o和 crtend.o
+是 C++语言的启动模块，由编译器 gcc 提供；而 crtl.o则与 crto.o 的作用类似，主要用于在调用 main()之
+前做一些初始化工作，全局符号_start 就定义在这个模块中。</p>
+</li>
+<li>
+<p>crtbegin.o 和 crtend.o主要用于C++语言在.ctors 和.dtors 区中执行全局构造器（constructor）和析构
+器（destructor）函数。crtbeginS.o和crtendS.o的作用与前两者类似，但用于创建共享模块中。crti.o用于
+在.init区中执行初始化函数init()。.init区中包含进程的初始化代码，即当程序开始执行时，系统会在调用 main()之前先执行.init 中的代码。crtn.o 则用于在.fini 区中执行进程终止退出处理函数 fini()函数，即当程序正常退出时（main()返回之后），系统会安排执行.fini 中的代码。</p>
+</li>
+<li>
+<p>boot/head.s程序中第136--140行就是用于为跳转到init/main.c中的main()函数作准备工作。第139行上的指令在栈中压入了返回地址，而第 140 行则压入了 main()函数代码的地址。当head.s最后在第218行
+上执行 ret指令时就会弹出 main()的地址，并把控制权转移到 init/main.c 程序中。</p>
+</li>
+</ul>
+<h3 id="342-c">3.4.2 在汇编程序中调用C函数<a class="headerlink" href="#342-c" title="Permanent link">&para;</a></h3>
+<ul>
+<li>在汇编程序调用一个C函数时，程序需要首先按照<strong>逆向顺序把函数参数压入栈中</strong>，即函数最后（最右边的）一个参数先入栈，而最左边的第1个参数在最后调用指令之前入栈，见下图所示。然后执行CALL指令去执行被调用的函数。在调用函数返回后，程序需要再把先前压入栈中的函数参数清除掉。</li>
+</ul>
+<p><img alt="p3-8.png" src="../../linux011image/p3-c/3-8.png" /></p>
+<ul>
+<li>
+<p>在执行CALL指令时，CPU会把CALL指令下一条指令的地址压入栈中（见图中EIP）。如果调用还
+涉及到代码特权级变化，那么CPU还会进行堆栈切换，并且把当前堆栈指针、段描述符和调用参数压入新堆栈中。由于Linux 内核中只使用中断门和陷阱门方式处理特权级变化时的调用情况，并没有使用CALL 指令来处理特权级变化的情况，因此这里对特权级变化时的CALL指令使用方式不再进行说明。</p>
+</li>
+<li>
+<p>汇编中调用C函数比较“自由”。只要是在栈中适当位置的内容就都可以作为参数供C函数使用。这
+单仍然以上图中具有3个参数的函数调用为例，如果我们没有专门为调用函数func()压入参数就首接调用它的话，那么func()函数仍然会把存放EIP位置以上的栈中其他内容作为自己的参数使用。如果我们为调用 func()而仅仅明确地压入了第 1、第 2 个参数，那么 func()函数的第 3个参数 p3 就会直接使用 p2 前的栈中内容。在 Linux 0.1x 内核代码中就有几处使用了这种方式。例如在 kernel/system_call.s 汇编程序中第 217行上调用 copy_process()函数（kernel/fork.c 中第68行）的情况。在汇编程序函数_sys_fork 中虽然只把5个参数压入了栈中，但是 copy_process()却共带有多达 17 个参数，见下面所示：</p>
+</li>
+</ul>
+<p><img alt="p3-9.png" src="../../linux011image/p3-c/3-9.png" /></p>
+<ul>
+<li>
+<p>我们知道参数越是最后入栈，它越是靠近 C 函数参数左侧。因此实际上调用 copy_process()函数之前入栈 5 个寄存器值就是 copy_process()函数的最左面的 5 个参数。按顺序它们分别对应为入栈的 eax（nr）、 ebp、edi、esi 和寄存器 gs 的值。而随后的其余参数实际上直接对应堆栈上已有的内容。这些内容是进入系统调用中断处理过程开始，直到调用本系统调用处理过程时逐步入栈的各寄存器的值。</p>
+</li>
+<li>
+<p>参数 none 是 system_call.s 程序第 94 行上利用地址跳转表sys_call_table[]（定义在
+include/linux/sys.h，74行）调用_sys_fork时的下一条指令的返回地址值。随后的参数是刚进入 system_call 时在 83--88 行压入栈的寄存器 ebx、ecx、edx 和段寄存器 fs、es、ds。最后 5 个参数是 CPU 执行中断指令压入返回地址 eip 和 cs、标志寄存器eflags、用户栈地址 esp 和 ss。因为系统调用涉及到程序特权级变化，所以 CPU 会把标志寄存器值和用户栈地址也压入了堆栈。在调用 C 函数 copy_process()返回后，_sys_fork 也只把自已压入的 5个参数丢弃掉，栈中其他还均保存着。其他采用上述用法的函数还有 kernel/signal.c 中的 do_signal()、fs/exec.c 中的 do_execve()等，请自己加以分析。</p>
+</li>
+<li>
+<p>另外，我们说汇编程序调用C函数比较自由的另一个原因是我们可以根本不用CALL指令而采用JMP
+指令来同样达到调用函数的目的。方法是在参数入栈后人工把下一条要执行的指令地址压入栈中，然后首接使用JMP指令跳转到被调用函数开始地址处去执行函数。此后当函数执行完成时就会执行RET指令把我们人工压入栈中的下一条指令地址弹出，作为函数返回的地址。Linux内核中也有多处用到了这种函数调用方法，例如 kernel/asm.s 程序第 62 行调用执行 traps.c 中的do_int3()函数的情况。</p>
+</li>
+</ul>
+<h3 id="343-c">3.4.3 在C程序中调用汇编函数<a class="headerlink" href="#343-c" title="Permanent link">&para;</a></h3>
+<p>重要性不高，略。</p>
+<p><strong><em>参考原书</em></strong></p>
+<h2 id="35-linux-011-35">3.5 Linux 0.11 目标文件格式 （3.5这一大节看不太懂！！）<a class="headerlink" href="#35-linux-011-35" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>这里给出了Linux 0.11 内核所支持的 a.out 目标文件格式的信息。as86 和　 ld86生成的是MINIX专门的标文件格式，我们将在涉及这种格式的内核创建工具一章中给出。因为 MINIX目标文件结构与a.out目标文件格式类似，所以这里不对其进行说明。有关目标文件和链接程序的基本工作原理可参见John R.Levine 著的《Linkers ＆ Loaders》一书。</p>
+</li>
+<li>
+<p>为便于描述，这里把编译器生成的目标文件称为目标模块文件（简称模块文件），而把链接程序输出产生的可执行目标文件称为可执行文件。并且把它们都统称为目标文件。</p>
+</li>
+</ul>
+<h3 id="351">3.5.1 目标文件格式<a class="headerlink" href="#351" title="Permanent link">&para;</a></h3>
+<ul>
+<li>在 Linux 0.11 系统中，GNU gcc 或 gas 编译输出的目标模块文件和链接程序所生成的可执行文件都使用了 UNIX 传统的 a.out 格式。这是一种被称为汇编与链接输出（Assembly ＆ linker editor output）的目标文件格式。对于具有内存分页机制的系统来说，这是一种简单有效的目标文件格式。a.out格式文件由一个文件头和随后的代码区（Text section，也称为正文段）、已初始化数据区（Data section，也称为数据段）、重定位信息区、符号表以及符号名字符串构成。其中代码区和数据区通常也被分别称为正文段（代码段）和数据段。</li>
+</ul>
+<p>下图为a.out格式的目标文件：</p>
+<p><img alt="p3-10.png" src="../../linux011image/p3-c/3-10.png" /></p>
+<ul>
+<li>
+<p>a.out格式7个区的基本定义和用途是:</p>
+</li>
+<li>
+<p>执行头部分(exec header)。执行文件头部分。该部分中含有一些参数(exec 结构)，是有关目标文件的整体结构信息。例如代码和数据区的长度、未初始化数据区的长度、对应源程序文件名以及目标文件创建时间等。内核使用这些参数把执行文件加载到内存中并执行，而链接程序（ld）使用这些参数将一些模块文件组合成一个可执行文件。这是目标文件唯一必要的组成部分。</p>
+</li>
+<li>
+<p>代码区(text segment)。由编译器或汇编器生成的二进制指令代码和数据信息，含有程序执行时被加载到内存中的指令代码和相关数据。可以以只读形式被加载。</p>
+</li>
+<li>
+<p>数据区(data segment)。由编译器或汇编器生成的二进制指令代码和数据信息，这部分含有已经初始化过的数据，总是被加载到可读写的内存中。</p>
+</li>
+<li>
+<p>代码重定位部分(text relocations)。这部分含有供链接程序使用的记录数据。在组合目标模块文件时用于定位代码段中的指针或地址。当链接程序需要改变目标代码的地址时就需要修正和维护这些地方。</p>
+</li>
+<li>
+<p>数据重定位部分（data relocations）。类似于代码重定位部分的作用，但是用于数据段中指针的重定位。</p>
+</li>
+<li>
+<p>符号表部分(symbol table)。这部分同样含有供链接程序使用的记录数据。这些记录数据保存着模块文件中定义的全局符号以及需要从其他模块文件中输入的符号，或者是由链接器定义的符号，用于在模块文件之间对命名的变量和函数（符号）进行交叉引用。</p>
+</li>
+<li>
+<p>字符串表部分(string table)。该部分含有与符号名相对应的字符串。用于调试程序调试目标代码，与链接过程无关。这些信息可包含源程序代码和行号、局部符号以及数据结构描述信息等。</p>
+</li>
+<li>
+<p>对于一个指定的目标文件并非一定会包含所有以上信息。由于Linux 0.11 系统使用了Intel CPU的内存管理功能，因此它会为每个执行程序单独分配一个64MB的地址空间（逻辑地址空间）使用。在这种情况下因为链接器已经把执行文件处理成从一个固定地址开始运行，所以相关的可执行文件中就不再需要重定位信息。下面我们对其中几个重要区或部分进行说明。</p>
+</li>
+</ul>
+<h4 id="3511">3.5.1.1 执行头部分<a class="headerlink" href="#3511" title="Permanent link">&para;</a></h4>
+<p>目标文件的文件头中含有一个长度为32 字节的 exec 数据结构，通常称为文件头结构或执行头结构。其定义如下所示。有关 a.out结构的详细信息请参见include/a.out.h文件后的介绍。</p>
+<p><img alt="p3-11.png" src="../../linux011image/p3-c/3-11.png" /></p>
+<ul>
+<li>
+<p>根据 a.out 文件中头结构魔数字段的值，我们又可把 a.out 格式的文件分成几种类型。Linux 0.11 系统使用了其中两种类型：模块目标文件使用了<strong>OMAGIC（Old Magic）</strong>类型的 a.out 格式，它指明文件是目标文件或者是不纯的可执行文件。其魔数是0x107（八进制0407）。而执行文件则使用了 ZMAGIC 类型的 a.out 格式，它指明文件为需求分页处理（demang-paging，即需求加载load on demand）的可执行文件。其魔数是 0x10b（八进制0413）。这两种格式的主要区别在于它们对各个部分的存储分配方式上。虽然该结构的总长度只有 32字节，但是对于一个ZMAGIC类型的执行文件来说，其文件开始部分却需要专门留出1024 字节的空间给头结构使用。除被头结构占用的 32个字节以外，其余部分均为0。从1024字节之后才开始放置程序的正文段和数据段等信息。而对于一个OMAGIC类型的.o模块文件来说，文件开始部分的 32字节头结构后面紧接着就是代码区和数据区。</p>
+</li>
+<li>
+<p>执行头结构中的 a_text 和 a_data 字段分别指明后面只读的代码段和可读写数据段的字节长度。a_bss 字段指明内核在加载目标文件时数据段后面未初始化数据区域（bss 段）的长度。由于Linux 在分配内存时会自动对内存清零，因此 bss 段不需要被包括在模块文件或执行文件中。为了形象地表示目标文件逻辑地具有一个 bss 段，在后面图示中将使用虚线框来表示目标文件中的bss 段。</p>
+</li>
+<li>
+<p>a_entry 字段指定了程序代码开始执行的地址，而 a_syms、a_trsize 和a_drsize 字段则分别说明了数据段后符号表、代码和数据段重定位信息的大小。对于可执行文件来说并不需要符号表和重定位信息，因此除非链接程序为了调试目的而包括了符号信息，执行文件中的这几个字段的值通常为0。</p>
+</li>
+</ul>
+<h4 id="3512">3.5.1.2 重定位信息部分<a class="headerlink" href="#3512" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Linux 0.11 系统的模块文件和执行文件都是 a.out格式的目标文件，但是只有编译器生成的模块文件中包含用于链接程序的重定位信息。代码段和数据段的重定位信息均有重定位记录（项）构成，每个记录的长度为8字节，其结构如下所示。</li>
+</ul>
+<p><img alt="p3-12.png" src="../../linux011image/p3-c/3-12.png" /></p>
+<ul>
+<li>重定位项的功能有两个。一是当代码段被重定位到一个不同的基地址处时，重定位项则用于指出需要修改的地方。二是在模块文件中存在对未定义符号引用时，当此未定义符号最终被定义时链接程序就可以使用相应重定位项对符号的值进行修正。由上面重定位记录项的结构可以看出，每个记录项含有模块文件代码区（代码段）和数据区（数据段）中需要重定位处长度为4字节的地址以及规定如何具体进行重定位操作的信息。地址字段r_address 是指可重定位项从代码段或数据段开始算起的偏移值。2比特的长度字段 r_length 指出被重定位项的长度，0到3 分别表示被重定位项的宽度是1字节、2 字节、4 字节或8字节。标志位r_pcrel指出被重定位项是一个“PC 相关的”的项，即它作为一个相对地址被用于指令当中。外部标志位r_extern 控制着r_symbolnum 的含义，指明重定位项参考的是段还是一个符号。如果该标志值是0, 那么该重定位项是一个普通的重定位项，此时r_symbolnum 字段指定是在哪个段中寻址定位。如果该标志是1，那么该重定位项是对一个外部符号的引用，此时r_symbolnum指定目标文件中符号表中的一个符号，需要使用符号的值进行重定位。</li>
+</ul>
+<h4 id="3513">3.5.1.3 符号表和字符串部分<a class="headerlink" href="#3513" title="Permanent link">&para;</a></h4>
+<p>目标文件的最后部分是符号表和相关的字符串表。符号表记录项的结构如下所示。</p>
+<p><img alt="p3-13.png" src="../../linux011image/p3-c/3-13.png" /></p>
+<ul>
+<li>
+<p>由于GNU gcc 编译器允许任意长度的标识符，因此标识符字符串都位于符号表后的字符串表中。每个符号表记录项长度为12字节，其中第一个字段给出了符号名字符串（以 null 结尾）在字符串表中的偏移位置。类型字段n_type 指明了符号的类型。该字段的最后一个比特位用于指明符号是否是外部的(全局的)。如果该位为1的话，那么说明该符号是一个全局符号。链接程序并不需要局部符号信息，但可供调试程序使用。n_type 字段的其余比特位用来指明符号类型。a.out.h头文件中定义了这些类型值常量符号。符号的主要的类型包括：</p>
+</li>
+<li>
+<p>text、data 或bbs 指明是本模块文件中定义的符号。此时符号的值是模块中该符号的可重定位地址。</p>
+</li>
+<li>
+<p>abs指明符号是一个绝对的（固定的）不可重定位的符号。符号的值就是该固定值。 </p>
+</li>
+<li>
+<p>undef指明是一个本模块文件中未定义的符号。此时符号的值通常是0。</p>
+</li>
+<li>
+<p>但作为一种特殊情况，编译器能够使用一个未定义的符号来要求链接程序为指定的符号名保留一块存储空间。如果一个未定义的外部（全局）符号具有非零值，那么对链接程序而言该值就是程序希望指定符号寻址的存储空间的大小值。在链接操作期间，如果该符号确实没有定义，那么链接程序就会在 bss 段中为该符号名建立一块存储空间，空间的大小是所有被链接模块中该符号值最大的一个。这个就是 bss 段中所谓的公共块（Common block）定义，主要用于支持未初始化的外部（全局）数据。例如程序中定义的未初始化的数组。如果该符号在任意一个模块中已经被定义了，那么链接程序就会使用该定义而忽略该值。</p>
+</li>
+</ul>
+<h3 id="352-linux-011">3.5.2 Linux 0.11 中的目标文件格式<a class="headerlink" href="#352-linux-011" title="Permanent link">&para;</a></h3>
+<p>在 Linux 0.11 系统中,我们可以使用 objdump 命令来查看模块文件或执行文件中文件头结构的具体值。例如，下面列出了hello.o目标文件及其执行文件中文件头的具体值。</p>
+<p><img alt="p3-14.png" src="../../linux011image/p3-c/3-14.png" /></p>
+<p><img alt="p3-15.png" src="../../linux011image/p3-c/3-15.png" /></p>
+<ul>
+<li>可以看出，hello.o 模块文件的魔数是0407（OMAGIC），代码段紧跟在头结构之后。除了文件头结构以外，还包括一个长度为0x28字节的代码段和一个具有3个符号项的符号表以及长度为0x10字节的代码段重定位信息。其余各段的长度均为0。</li>
+<li>
+<p>对应的执行文件 hello 的魔数是0413（ZMAGIC），代码段从文件偏移位置 1024 字节开始存放。代码段和数据段的长度分别为0x3000 和0x1000 字节，并带有包含141个项的符号表。</p>
+</li>
+<li>
+<p>我们可以使用命令 strip 删除执行文件中的符号表信息。例如下面我们删除了 hello 执行文件中的符号信息。可以看出 hello 执行文件的符号表长度变成了0，并且 hello 文件的长度也从原来的 20591 字节减小到17412 字节。</p>
+</li>
+</ul>
+<hr />
+<ul>
+<li>磁盘上 a.out执行文件的各区在进程逻辑地址空间中的对应关系如下图所示。Linux 0.11 系统中进程的逻辑空间大小是64MB。对于 ZMAGIC类型的 a.out执行文件，它的代码区的长度是内存页面的整数倍。由于Linux 0.11 内核使用需求页（Demand-paging）技术，即在一页代码实际要使用的时候才被加载到物理内存页面中，而在进行加载操作的 fs/execve()函数中仅仅为其设置了分页机制的页目录项和页表项，因此需求页技术可以加快程序的加载的速度。</li>
+</ul>
+<p><img alt="p3-16.png" src="../../linux011image/p3-c/3-16.png" /></p>
+<ul>
+<li>
+<p>图中 bss 是进程的未初始化数据区，用于存放静态的未初始化数据。在开始执行程序时 bss 的第 1 页内存会被设置为全0。</p>
+</li>
+<li>
+<p>图中 heap 是堆空间区，用于分配进程在执行过程中动态申请的内存空间。</p>
+</li>
+</ul>
+<h3 id="353">3.5.3 链接程序输出<a class="headerlink" href="#353" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>链接程序对输入的一个或多个模块文件以及相关的库函数模块进行处理，最终生成相应的二进制执行文件或者是一个所有模块组合而成的大模块文件。在这个过程中，链接程序的首要任务是给执行文件（或者输出的模块文件）进行存储空间分配操作。一旦存储位置确定，链接程序就可以继续执行符号绑定操作和代码修正操作。因为模块文件中定义的大多数符号与文件中的存储位置有关，所以在符号对应的位置没有确定下来之前符号是没有办法解析的。</p>
+</li>
+<li>
+<p>每个模块文件中包括几种类型的段，链接程序的第二个任务就是把所有模块中相同类型的段组合连接在一起，在输出文件中为指定段类型形成单一一个段。例如，链接程序需要把所有输入模块文件中的代码段合并成一个段放在输出的执行文件中。</p>
+</li>
+<li>
+<p>对于 a.out 格式的模块文件来说，由于段类型是预先知道的，因此链接程序对a.out 格式的模块文件进行存储分配比较容易。例如，对于具有两个输入模块文件和需要连接一个库函数模块的情况，其存储分配情况如下图所示。每个模块文件都有一个代码段（text）、数据段（data）和一个bss 段，也许还会有一些看似外部（全局）符号的公共块。链接程序会收集每个模块文件包括任何库函数模块中的代码段、数据段和bss 段的大小。在读入并处理了所有模块之后，任何具有非零值的未解析的外部符号都将作为公共块来看待，并且把它们分配存储在bss 段的末尾处。</p>
+</li>
+</ul>
+<p><img alt="p3-17.png" src="../../linux011image/p3-c/3-17.png" /></p>
+<ul>
+<li>
+<p>此后链接程序就可以为所有段分配地址。对于Linux0.11系统中使用的 ZMAGIC类型的a.out 格式输出文件中的代码段被设置成从固定地址0开始。数据段则从代码段后下一个页面边界开始。bss 段则紧随数据段开始放置。在每个段内，链接程序会把输入模块文件中的同类型段顺序存放，并按字进行边界对齐。</p>
+</li>
+<li>
+<p>当Linux0.11 内核加载一个可执行文件时，它会根据文件头部结构中的信息首先判断文件是否是一个合适的可执行文件，即其魔数类型是否为ZMAGIC，然后系统在用户态堆栈顶部为程序设置环境参数和命令行上输入的参数信息块并为其构建一个任务数据结构。接着在设置了一些相关寄存器值后利用堆栈返回技术去执行程序。执行程序映像文件中的代码和数据将会在实际执行到或用到时利用需求加载技术（Load on demand）动态加载到内存中。</p>
+</li>
+<li>
+<p>对于 Linux 0.11 内核的编译过程，它是根据内核的配置文件 Makefile 使用 make 命令指挥编译器和链接程序操作而完成的。在建立过程中 make还利用内核源代码 tools/目录下的 build.c程序编译生成了一个用于组合所有模块的临时工具程序build。由于内核是由引导启动程序利用 ROM BIOS 中断调用加载到内存中，因此编译产生的内核各模块中的执行头结构部分需要去掉。工具程序 build 主要功能就是分别去掉 bootsect、setup 和 system 文件中的执行头结构，然后把它们顺序组合在一起产生一个名为Image 的内核映象文件。</p>
+</li>
+</ul>
+<h3 id="354">3.5.4 链接程序预定义<a class="headerlink" href="#354" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>在链接过程中，链接器ld 和 ld86 会使用变量记录下执行程序中每个段的逻辑地址。因此在程序中可以通过访问这几个外部变量来获得程序中段的位置。链接器预定义的外部变量通常至少有etext、_etext、 edata、_edata、end 和_end。</p>
+</li>
+<li>
+<p><strong>变量名_etext 和 etext 的地址是程序正文段结束后的第 1个地址</strong>；<strong>_edata 和 edata 的地址是初始化数据区后面的第1个地址</strong>；<strong>_end和 end的地址是未初始化数据区（bss）后的第1个地址位置</strong>。带下划线’_’前缀的名称等同于不带下划线的对应名称，它们之间的唯一区别在于ANSI、POSIX 等标准中没有定义符号 etext、edata 和 end.</p>
+</li>
+<li>
+<p>当程序刚开始执行时，其brk 所指位置与_end 处于相同位置。但是系统调用 sys_brk()、内存分配函数 malloc()以及标准输入/输出等操作会改变这个位置。因此程序当前的brk位置需要使用 sbrk()来取得。注意，这些变量名必须看作是地址。因此在访问它们时需要使用取地址前缀’&amp;’，例如&amp;end等。</p>
+</li>
+</ul>
+<hr />
+<ul>
+<li>Linux O.1x 内核在初始化块设备高速缓冲区时（fs/buffer.c），就使用了变量名_end 来获取内核映像文件 Image 在内存中的末端后的位置，并从这个位置起开始设置高速缓冲区。</li>
+</ul>
+<h3 id="355-syetemmap">3.5.5 Syetem.map文件<a class="headerlink" href="#355-syetemmap" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>当运行GNU 链接器 gld（ld）时若使用了’-M'选项，或者使用 nm 命令，则会在标准输出设备（通常是屏幕）上打印出链接映像（link map）信息，即是指由连接程序产生的目标程序内存地址映像信息。其中列出了程序段装入到内存中的位置信息。具体来讲有如下信息：</p>
+</li>
+<li>
+<p>目标文件及符号信息映射到内存中的位置; </p>
+</li>
+<li>
+<p>公共符号如何放置;</p>
+</li>
+<li>
+<p>链接中包含的所有文件成员及其引用的符号。</p>
+</li>
+<li>
+<p>通常我们会把发送到标准输出设备的链接映像信息重定向到一个文件中（例如 System.map）。在编译内核时，linux/Makefile 文件产生的 System.map 文件就用于存放内核符号表信息。符号表是所有内核符号及其对应地址的一个列表，当然也包括上面说明的_etext、_edata 和_end 等符号的地址信息。随着每次内核的编译，就会产生一个新的对应 System.map 文件。当内核运行出错时，通过 System.map 文件中的符号表解析，就可以查到一个地址值对应的变量名，或反之。</p>
+</li>
+<li>
+<p>利用 System.map 符号表文件，在内核或相关程序出错时，就可以获得我们比较容易识别的信息。符号表的样例如下所示:</p>
+</li>
+</ul>
+<p><img alt="p3-18.png" src="../../linux011image/p3-c/3-18.png" /></p>
+<ul>
+<li>
+<p>其中每行说明一个符号，第 1栏指明符号值（地址）；第 2栏是符号类型，指明符号位于目标文件的哪个区（sections）或其属性；第3栏是对应的符号名称。</p>
+</li>
+<li>
+<p>第2栏中的符号类型指示符通常有表3-5所示的几种，另外还有一些与采用的目标文件格式相关。如果符号类型是小写字符，则说明符号是局部的；如果是大写字符，则说明符号是全局的（外部的）。参见文件 include/a.out.h 中 nlist{}结构n_type 字段的定义（第 110--185 行）。</p>
+</li>
+</ul>
+<p><img alt="p3-19.png" src="../../linux011image/p3-c/3-19.png" /></p>
+<p><img alt="p3-20.png" src="../../linux011image/p3-c/3-20.png" /></p>
+<ul>
+<li>
+<p>可以看出名称为 dmi_broken 的变量位于内核地址 0xc03441a0 处。</p>
+</li>
+<li>
+<p>System.map 位于使用它的软件（例如内核日志记录后台程序klogd）能够寻找到的地方。在系统启动时,如果没有以一个参数的形式为klogd给出 System.map 的位置,则 klogd将会在三个地方搜寻 System.map。依次为：</p>
+</li>
+</ul>
+<blockquote>
+<p>/boot/System.map<br />
+/System.map<br />
+/usr/src/linux/System.map</p>
+</blockquote>
+<ul>
+<li>尽管内核本身实际上不使用 System.map，但其他程序，象 klogd、lsof、ps 以及其他象 dosemu 等许多软件都需要有一个正确的 System.map 文件。利用该文件，这些程序就可以根据已知的内存地址查找出对应的内核变量名称，便于对内核的调试工作。</li>
+</ul>
+<h2 id="36-make-makefile">3.6 Make 程序和Makefile文件<a class="headerlink" href="#36-make-makefile" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Makefile（或 makefile）文件是 make 工具程序的配置文件。Make 工具程序的主要用途是能自动地决定一个含有很多源程序文件的大型程序中哪个文件需要被重新编译。Makefile 的使用比较复杂，这里只是根据上面的 Makefile文件作些简单的介绍。<strong>详细说明请参考GNU make 使用手册</strong>。</p>
+</li>
+<li>
+<p>make的执行过程分为两个不同的阶段。在第一个阶段，它读取所有的Makefile文件以及包含的Makefile 文件等，记录所有的变量及其值、隐式的或显式的规则，并构造出所有目标对象及其先决条件的一幅全景图。在第二阶段期间，make 就使用这些内部结构来确定哪个目标对象需要被重建，并且使用相应的规则来操作。</p>
+</li>
+<li>
+<p>当 make 重新编译程序时，每个修改过的C代码文件必须被重新编译。如果一个头文件被修改过了，那么为了确保正确，每一个包含该头文件的C代码程序都将被重新编译。每次编译操作都产生一个与源程序对应的目标文件。最终，如果任何源代码文件被编译过了，那么所有的目标文件不管是刚编译完的还是以前就编译好的必须连接在一起以生成新的可执行文件。</p>
+</li>
+<li>
+<p>简单的Makefile文件含有一些规则，这些规则具有如下的形式:</p>
+</li>
+</ul>
+<blockquote>
+<p>目标（target）... : 先决条件(prerequisites)...<br />
+      命令（command）<br />
+...</p>
+</blockquote>
+<ul>
+<li>
+<p>其中’目标’对象通常是程序生成的一个文件的名称；例如是一个可执行文件或目标文件。目标也可以是所要采取活动的名字，比如'清除’（’clean’）。’先决条件’是一个或多个文件名，是用作产生目标的输入条件。通常一个目标依赖几个文件。而’命令’是 make 需要执行的操作。一个规则可以有多个命令，每一个命令自成一行。请注意，<strong>你需要在每个命令行之前键入一个制表符</strong>！这是粗心者常常忽略的地方。</p>
+</li>
+<li>
+<p>如果一个先决条件通过目录搜寻而在另外一个目录中被找到，这并不会改变规则的命令；它们将被如期执行。因此，你必须小心地设置命令，使得命令能够在 make 发现先决条件的目录中找到需要的先决条件。这就需要通过使用自动变量来做到。自动变量是一种在命令行上根据具体情况能被自动替换的变量。自动变量的值是基于目标对象及其先决条件而在命令执行前设置的。例如，’<span class="arithmatex">\(’的值表示规则的所有先决条件，包括它们所处目录的名称；’\)</span>&lt;’的值表示规则中的第一个先决条件；’$@'表示目标对象；另外还有一些自动变量这里就不提了。</p>
+</li>
+<li>
+<p>有时，先决条件还常包含头文件，而这些头文件并不愿在命令中说明。此时自动变量’$&lt;’正是第一个先决条件。例如:</p>
+</li>
+</ul>
+<blockquote>
+<p>foo.o : foo.c def.c def.h hack.h<br />
+      cc -c &amp;(CFLAGS) $&lt; -o $@  </p>
+</blockquote>
+<ul>
+<li>其中的'<span class="arithmatex">\(&lt;'就会被自动地替换成 foo.c，而\)</span>@则会被替换为foo.o</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>为了让 make 能使用习惯用法来更新一个目标对象，你可以不指定命令，写一个不带命令的规则或者不写规则。此时 make 程序将会根据源程序文件的类型（程序的后缀）来判断要使用哪个隐式规则。</p>
+</li>
+<li>
+<p>后缀规则是为 make 程序定义隐式规则的老式方法（现在这种规则已经不用了，取而代之的是使用更通用更清晰的模式匹配规则）。下面例子就是一种双后缀规则。双后缀规则是用一对后缀定义的：源后缀和目标后缀。相应的隐式先决条件是通过使用文件名中的源后缀替换目标后缀后得到。因此，此时下面的’$&lt;’值是’<em>.c’文件名。而此条 make 规则的含义是将’</em>.c’程序编译成'*.s’代码。</p>
+</li>
+</ul>
+<blockquote>
+<p>.c.s:<br />
+      $(CC) $(CFLAGS) \  <br />
+      -nostdinc -Iinclude -S -o $*.s $&lt;</p>
+</blockquote>
+<ul>
+<li>Makefile 文件最后生成的依赖关系是用于让 make 来确定是否需要重建一个目标对象。比如当某个头文件被改动过后，make 就通过这些依赖关系，重新编译与该头文件有关的所有'*.c’文件。</li>
+</ul>
+<p>2024.12.20-12.25    于昆明</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      chen-xinglong CC-BY-4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://space.bilibili.com/363277510" target="_blank" rel="noopener" title="Bilibili | 周石东" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92c-26.4-.8-48.2-9.8-65.3-27.2S.7 396.5 0 368.2V169.8c.8-26 9.7-47.6 26.7-65.7C43.8 87.8 65.5 78.8 92 78h29.4L96 52.2c-5.7-5.7-8.6-13-8.6-21.8S90.3 14.3 96 8.6 109 0 117.9 0s16.1 2.9 21.9 8.6L213.1 78h88l74.5-69.4C381.7 2.9 389.2 0 398 0s16.1 2.9 21.9 8.6c5.7 5.7 8.6 13 8.6 21.8s-2.9 16.1-8.6 21.8L394.6 78h29.3c26.4.8 48 9.8 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96c-9.6.4-17.4 3.7-23.6 9.8-6.1 6.1-9.4 13.9-9.8 23.5v194.4c0 9.2 3.3 17 9.8 23.5s14.4 9.8 23.6 9.8h320.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/chen-xinglong" target="_blank" rel="noopener" title="GitHub | chen-xinglong" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.action.edit"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../mkdocs/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
