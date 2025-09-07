@@ -16,6 +16,10 @@ comments: true
 
 <https://www.merriam-webster.com/>
 
+## [虚拟机ubuntu16共享windows主机文件夹](https://www.cnblogs.com/minuhy/p/18715274)
+
+[https://www.cnblogs.com/minuhy/p/18715274](https://www.cnblogs.com/minuhy/p/18715274)
+
 ## 日语学习工具
 
 [标注日文假名工具](https://www.jcinfo.net/zh-hans/tools/kana)  
